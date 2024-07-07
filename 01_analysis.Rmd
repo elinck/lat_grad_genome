@@ -1,0 +1,838 @@
+---
+title: "A latitudinal gradient of reference genomes?"
+output: html_document
+date: "2024-06-05"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+As part of a review on biases in available genomic resources, we want to know whether there is a positive correlation between latitude and the number of available Eurkaryotic reference genomes. To do so, we will combine data from the NCBI genome browser with associated records from GBIF in order to characterize the median latitude of each taxon's range.
+
+This notebook will perform that analysis and generate figures for the manuscript. (Much of the code below was adapted from an example by [Luis D. Verde Arregoitia](https://luisdva.github.io/rstats/richness/)—thanks, Luis!) It requires the following libraries: 
+
+```{r, warning=FALSE, message=FALSE}
+library(rgbif)
+library(tidyverse)
+library(sf)
+library(rnaturalearth)
+library(viridis)
+library(cowplot)
+library(segmented)
+```
+
+Let's assign our data directory:
+
+```{r, warning=FALSE, message=FALSE}
+data_dir <- "~/Dropbox/lat_grad_genome/data"
+```
+
+We'll start by extracting a list of species names from our NCBI download (see README.md for details):
+
+```{r, warning=FALSE, message=FALSE}
+f_birds <- file.path(data_dir, "birds.tsv")
+birds <- read_tsv(f_birds) %>% 
+  select("Organism Name") %>% 
+  rename('name'= 'Organism Name')
+
+f_mammals <- file.path(data_dir, "mammals.tsv")
+mammals <- read_tsv(f_mammals) %>% 
+  select("Organism Name") %>% 
+  rename('name'= 'Organism Name')
+
+f_squamates <- file.path(data_dir, "squamates.tsv")
+squamates <- read_tsv(f_squamates) %>% 
+  select("Organism Name") %>% 
+  rename('name'= 'Organism Name')
+
+f_amphibians <- file.path(data_dir, "amphibia.tsv")
+amphibians <- read_tsv(f_amphibians) %>% 
+  select("Organism Name") %>% 
+  rename('name'= 'Organism Name')
+
+f_turtles <- file.path(data_dir, "testudines.tsv")
+turtles <- read_tsv(f_turtles) %>% 
+  select("Organism Name") %>% 
+  rename('name'= 'Organism Name')
+
+f_crocodiles <- file.path(data_dir, "crocodylia.tsv")
+crocodiles <- read_tsv(f_crocodiles) %>% 
+  select("Organism Name") %>% 
+  rename('name'= 'Organism Name')
+
+f_tuatara <- file.path(data_dir, "tuatara.tsv")
+tuatara <- read_tsv(f_tuatara) %>% 
+  select("Organism Name") %>% 
+  rename('name'= 'Organism Name')
+
+species <- bind_rows(birds, mammals, squamates, amphibians, turtles, crocodiles, tuatara, .id = "dataset")
+species$dataset <- fct_recode(species$dataset, "birds" = "1", "mammals" = "2", "squamates" = "3", "amphibians" = "4", "turtles" = "5", "crocodiles" = "6", "tuatara" = "7")
+```
+
+Let's summarize the taxonomic information here:
+
+```{r, warning=FALSE, message=FALSE}
+table(species$dataset)
+```
+
+Next we'll link NCBI species names with their associated GBIF usageKey, using only exact binomial matches: 
+
+```{r, warning=FALSE, message=FALSE}
+taxon_id <- name_backbone_checklist(name_data=species) %>%
+  filter(matchType=='EXACT') %>% 
+  select(usageKey) %>%
+  as_vector() 
+```
+
+If not already downloaded, we'll scrape GBIF occurrence data for these species, using only records of preserved specimens with appropriate georeferencing: 
+
+```{r, warning=FALSE, message=FALSE}
+f_occ_data = file.path(data_dir, "0085284-240506114902167.zip")
+if (file.exists(f_occ_data)) {
+  d <- occ_download_get('0085284-240506114902167') %>%
+    occ_download_import()
+} else {
+  occ_download(
+  pred_in("taxonKey", taxon_id),
+  pred("basisOfRecord", "PRESERVED_SPECIMEN"),
+  pred("hasGeospatialIssue", FALSE),
+  pred("hasCoordinate", TRUE),
+  pred("occurrenceStatus","PRESENT"), 
+  format = "SIMPLE_CSV"
+  )
+}
+```
+
+As a point of comparison, we'll do the same for the full set of GBIF records in all seven groups. Here are birds: 
+
+```{r, warning=FALSE, message=FALSE}
+f_occ_data_birds = file.path(data_dir, "0071470-240506114902167.zip")
+if (file.exists(f_occ_data_birds)) {
+  e <- occ_download_get('0071470-240506114902167') %>%
+    occ_download_import()
+} else {
+  occ_download(
+  pred_in("taxonKey", 212),
+  pred("basisOfRecord", "PRESERVED_SPECIMEN"),
+  pred("hasGeospatialIssue", FALSE),
+  pred("hasCoordinate", TRUE),
+  pred("occurrenceStatus","PRESENT"), 
+  format = "SIMPLE_CSV"
+  )
+}
+```
+Mammals: 
+
+```{r, warning=FALSE, message=FALSE}
+f_occ_data_mammals = file.path(data_dir, "0083708-240506114902167.zip")
+if (file.exists(f_occ_data_mammals)) {
+  f <- occ_download_get('0083708-240506114902167') %>%
+    occ_download_import()
+} else {
+  occ_download(
+  pred_in("taxonKey", 359),
+  pred("basisOfRecord", "PRESERVED_SPECIMEN"),
+  pred("hasGeospatialIssue", FALSE),
+  pred("hasCoordinate", TRUE),
+  pred("occurrenceStatus","PRESENT"), 
+  format = "SIMPLE_CSV"
+  )
+}
+```
+Squamates: 
+
+```{r, warning=FALSE, message=FALSE}
+f_occ_data_squamates = file.path(data_dir, "0083881-240506114902167.zip")
+if (file.exists(f_occ_data_squamates)) {
+  g <- occ_download_get('0083881-240506114902167') %>%
+    occ_download_import()
+} else {
+  occ_download(
+  pred_in("taxonKey", 11592253),
+  pred("basisOfRecord", "PRESERVED_SPECIMEN"),
+  pred("hasGeospatialIssue", FALSE),
+  pred("hasCoordinate", TRUE),
+  pred("occurrenceStatus","PRESENT"), 
+  format = "SIMPLE_CSV"
+  )
+}
+```
+
+Amphibians: 
+
+```{r, warning=FALSE, message=FALSE}
+f_occ_data_amphibians = file.path(data_dir, "0085162-240506114902167.zip")
+if (file.exists(f_occ_data_amphibians)) {
+  h <- occ_download_get('0085162-240506114902167') %>%
+    occ_download_import()
+} else {
+  occ_download(
+  pred_in("taxonKey", "131"),
+  pred("basisOfRecord", "PRESERVED_SPECIMEN"),
+  pred("hasGeospatialIssue", FALSE),
+  pred("hasCoordinate", TRUE),
+  pred("occurrenceStatus","PRESENT"), 
+  format = "SIMPLE_CSV"
+  )
+}
+```
+
+Turtles: 
+
+```{r, warning=FALSE, message=FALSE}
+f_occ_data_turtles = file.path(data_dir, "0013376-240626123714530.zip")
+if (file.exists(f_occ_data_turtles)) {
+  i <- occ_download_get('0013376-240626123714530') %>%
+    occ_download_import()
+} else {
+  occ_download(
+  pred_in("taxonKey", "11418114"),
+  pred("basisOfRecord", "PRESERVED_SPECIMEN"),
+  pred("hasGeospatialIssue", FALSE),
+  pred("hasCoordinate", TRUE),
+  pred("occurrenceStatus","PRESENT"), 
+  format = "SIMPLE_CSV"
+  )
+}
+```
+
+Crocodiles: 
+
+```{r, warning=FALSE, message=FALSE}
+f_occ_data_crocodiles = file.path(data_dir, "0013380-240626123714530.zip")
+if (file.exists(f_occ_data_crocodiles)) {
+  j <- occ_download_get('0013380-240626123714530') %>%
+    occ_download_import()
+} else {
+  occ_download(
+  pred_in("taxonKey", "11493978"),
+  pred("basisOfRecord", "PRESERVED_SPECIMEN"),
+  pred("hasGeospatialIssue", FALSE),
+  pred("hasCoordinate", TRUE),
+  pred("occurrenceStatus","PRESENT"), 
+  format = "SIMPLE_CSV"
+  )
+}
+```
+
+...Tuataras:
+
+```{r, warning=FALSE, message=FALSE}
+f_occ_data_tuataras = file.path(data_dir, "0013381-240626123714530.zip")
+if (file.exists(f_occ_data_tuataras)) {
+  k <- occ_download_get('0013381-240626123714530') %>%
+    occ_download_import()
+} else {
+  occ_download(
+  pred_in("taxonKey", "11569602"),
+  pred("basisOfRecord", "PRESERVED_SPECIMEN"),
+  pred("hasGeospatialIssue", FALSE),
+  pred("hasCoordinate", TRUE),
+  pred("occurrenceStatus","PRESENT"), 
+  format = "SIMPLE_CSV"
+  )
+}
+```
+
+This data set includes higher-level taxonomic categories, so we'll filter it down to species alone, and then calculate the total number in the dataset: 
+
+```{r, warning=FALSE, message=FALSE}
+k$recordNumber <- as.character(k$recordNumber) # dealing with error message
+species_all <- bind_rows(e, f, g, h, i, j, k, .id = "dataset")
+species_all$dataset <- fct_recode(species_all$dataset, "birds" = "1", "mammals" = "2", "squamates" = "3", "amphibians" = "4", "turtles" = "5", "crocodiles" = "6", "tuatara" = "7")
+species_all <- species_all %>% filter(taxonRank=="SPECIES")
+species_all$species %>% unique() %>% length()
+```
+
+Decent! Let's break these numbers down a bit:
+
+```{r, warning=FALSE, message=FALSE}
+species_all %>% filter(dataset=="birds") %>% select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="mammals") %>% select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="squamates") %>% select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="amphibians") %>% select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="turtles") %>% select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="crocodiles") %>% select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="tuatara") %>% select(species) %>% unique() %>% nrow()
+```
+
+Two tuataras is suspicious—turns out one is a fossil. Let's exclude it:
+
+```{r}
+#species_all %>% filter(species != "Homoeosaurus maximiliani") %>% unique() %>% nrow()
+```
+Next, we'll filter both datasets and produce multipoint sf objects for plotting and computation of species richness. We'll also want to filter these data down to the species with a sufficient number of observations (arbitrarily chosen as 10): 
+
+```{r, warning=FALSE, message=FALSE}
+# reference genome species list
+d_filtered <- d %>% select(species, decimalLongitude, decimalLatitude) %>%
+  na.omit() %>%
+  group_by(species) %>%
+  filter(n() > 10)
+d_sf <- st_as_sf(d_filtered, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326) %>%
+  group_by(species) %>%
+  summarize()
+d_sf$species %>% unique() %>% length()
+
+
+# all species
+e_filtered <- species_all %>% select(species, decimalLongitude, decimalLatitude) %>%
+  na.omit() %>%
+  group_by(species) %>%
+  filter(n() > 10)
+e_sf <- st_as_sf(e_filtered, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326) %>%
+  group_by(species) %>%
+  summarize()
+e_sf$species %>% unique() %>% length()
+```
+
+We'll use these points to create convex hulls (i.e., crude approximations of species ranges from occurrence data)
+
+```{r, warning=FALSE, message=FALSE}
+convex_hulls_d <- st_convex_hull(d_sf) 
+convex_hulls_e <- st_convex_hull(e_sf) 
+```
+
+Next, we want to download polygons of Earth's landmasses. We'll need to conform their projection to that of our point data, make sure `sf` is not using spherical geometry, and make sure they are geometrically valid: 
+
+```{r, warning=FALSE, message=FALSE}
+land <- ne_download(type = "land", category = "physical")
+st_crs(land) <- st_crs(d_sf)
+sf_use_s2(FALSE)
+land <- st_make_valid(land)
+```
+
+Next we'll create a 2 x 2 degree grid, and calculate species richness using the convex hulls generated earlier: 
+
+```{r, warning=FALSE, message=FALSE}
+grid <- land %>%
+  st_make_grid(cellsize = 2) %>%
+  st_intersection(land) %>%
+  st_cast("MULTIPOLYGON") %>%
+  st_sf() %>%
+  mutate(cellid = row_number())
+
+richness_grid_hulls_d <- grid %>%
+  st_join(convex_hulls_d) %>%
+  mutate(overlap = ifelse(!is.na(id), 1, 0)) %>%
+  group_by(cellid) %>%
+  summarize(num_species = sum(overlap))
+
+richness_grid_hulls_e <- grid %>%
+  st_join(convex_hulls_e) %>%
+  mutate(overlap = ifelse(!is.na(id), 1, 0)) %>%
+  group_by(cellid) %>%
+  summarize(num_species = sum(overlap))
+```
+
+Which cells have maximum species richness? We'll start with our reference genome dataset:
+
+```{r, warning=FALSE, message=FALSE}
+richness_grid_hulls_d$num_species %>% min()
+richness_grid_hulls_d$num_species %>% max()
+richness_grid_hulls_d[richness_grid_hulls_d$num_species==richness_grid_hulls_d$num_species %>% max(),]$geometry
+```
+
+And now the full dataset: 
+
+```{r, warning=FALSE, message=FALSE}
+richness_grid_hulls_e$num_species %>% min()
+richness_grid_hulls_e$num_species %>% max()
+richness_grid_hulls_e[richness_grid_hulls_e$num_species==richness_grid_hulls_e$num_species %>% max(),]$geometry
+```
+Let's also figure out where the greatest discrepency between reference genome diversity and true species richness is: 
+
+```{r, warning=FALSE, message=FALSE}
+richness_grid_hulls_e$difference_vector <- richness_grid_hulls_e$num_species-richness_grid_hulls_d$num_species 
+max_value <- max(richness_grid_hulls_e$difference_vector)
+richness_grid_hulls_e[richness_grid_hulls_e$difference_vector==max_value,]$geometry
+```
+
+We'll standardize species richness and merge datasets for faceting:
+
+```{r, warning=FALSE, message=FALSE}
+richness_grid_hulls_d <- richness_grid_hulls_d %>% mutate(std_richness = (num_species-mean(num_species))/sd(num_species))
+tmp <- cbind.data.frame(richness_grid_hulls_d$num_species, richness_grid_hulls_e$num_species) %>% as_tibble() %>% rename('genome_spp'='richness_grid_hulls_d$num_species', 'all_spp'='richness_grid_hulls_e$num_species')
+richness_grid_hulls_e$num_species <- apply(tmp, MARGIN = 1,  
+                                           FUN = function(x) max(x,na.rm = TRUE))
+richness_grid_hulls_e <-richness_grid_hulls_e %>% mutate(std_richness = (num_species-mean(num_species))/sd(num_species))
+richness_grid_hulls <- bind_rows(richness_grid_hulls_d, richness_grid_hulls_e,.id = "dataset")
+richness_grid_hulls$dataset <- fct_recode(richness_grid_hulls$dataset, "with genomes" = "1", "all species" = "2")
+```
+
+Let's plot this: 
+
+```{r, warning=FALSE, message=FALSE}
+hullplot <-
+  ggplot(richness_grid_hulls) +
+  geom_sf(data = land, fill = "grey", size = 0.1) +
+  geom_sf(aes(fill = std_richness), color = NA) +
+  scale_fill_viridis() +
+  scale_x_continuous(breaks = c(-84)) +
+  theme_classic() + 
+  theme(strip.background = element_blank()) +
+  labs(fill = "richness") +
+  facet_wrap(~dataset, nrow=3)
+hullplot
+```
+
+Let's also plot the regions where there is the greatest difference between the reference genome gradient and the true species richness gradient:
+
+```{r, warning=FALSE, message=FALSE}
+richness_diff_hulls <- richness_grid_hulls_d %>% 
+  select(cellid, num_species, geometry) %>% 
+  mutate(difference = (richness_grid_hulls_e$std_richness-richness_grid_hulls_d$std_richness)) %>%
+  mutate(std_difference = scale(difference)) %>% 
+  mutate(proportion_richness = 1-(richness_grid_hulls_d$num_species)/(richness_grid_hulls_e$num_species))
+
+diffplot <-
+  ggplot(richness_diff_hulls) +
+  geom_sf(data = land, fill = "grey", size = 0.1) +
+  geom_sf(aes(fill = std_difference), color = NA) +
+  scale_fill_viridis() +
+  scale_x_continuous(breaks = c(-84)) +
+  theme_classic() + 
+  theme(strip.background = element_blank()) +
+  labs(fill = "std(Missing Species)") 
+
+diffplot
+```
+
+With these data we'll also directly visualize species richness by latitude. To do so, we need to extract the coordinates of the center of each grid cells, and bind these into a new dataset:
+
+```{r, warning=FALSE, message=FALSE}
+coords_hulls <- st_coordinates(st_transform(st_centroid(richness_grid_hulls), 4326))
+sp_rich_hulls <- richness_grid_hulls %>% as_tibble()
+sp_rich_hulls <- bind_cols(sp_rich_hulls[,1:3], coords_hulls)
+sp_rich_hulls <- sp_rich_hulls %>% rename(longitude = X, latitude = Y)
+sp_rich <- sp_rich_hulls %>% mutate(dataset = factor(dataset, levels = c("all species", "with genomes")))
+```
+
+Now we'll plot them:
+
+```{r, warning=FALSE, message=FALSE}
+sp_rich_graph <- 
+  ggplot(sp_rich %>% arrange(dataset), 
+         aes(x=latitude, y=num_species, color=dataset, group=dataset)) +
+  geom_point(pch=21) +
+  scale_color_manual(values=c("orange","dodgerblue")) + 
+  theme_classic() +
+  theme(strip.background = element_blank()) 
+
+sp_rich_graph
+```
+
+Let's also plot the *absolute* value of latitude: 
+
+```{r, warning=FALSE, message=FALSE}
+sp_rich_graph_abs <- 
+  ggplot(sp_rich %>% arrange(dataset),
+         aes(abs(latitude), num_species, color=dataset)) +
+  geom_point(pch=21) +
+  scale_color_manual(values=c("orange","dodgerblue")) + 
+  theme_classic() +
+  theme(strip.background = element_blank())
+
+sp_rich_graph_abs
+```
+
+Let's perform simple linear regressions to evaluate the slope and significance of any latitudinal gradients in richness across datasets and taxa. First, all species: 
+
+```{r}
+lm(num_species ~ abs(latitude), sp_rich %>% filter(dataset == "all species")) %>% summary()
+```
+Next, only those with genomes: 
+
+```{r}
+lm(num_species ~ abs(latitude), sp_rich %>% filter(dataset == "with genomes")) %>% summary()
+```
+
+From data visualization, it seems like piecewise linear regression might provide a better fit for the reference genome dataset: 
+
+```{r, warning=FALSE, message=FALSE}
+sp_rich_genomes <- sp_rich %>% filter(dataset == "with genomes") 
+sp_rich_genomes$abs_lat <- abs(sp_rich_genomes$latitude) 
+model <- lm(num_species ~ abs_lat, sp_rich_genomes)
+segmented_model <- segmented(model, seg.Z = ~ abs_lat, psi = 26)
+segmented_model %>% summary()
+```
+
+Let's make the central figure for the manuscript:
+
+```{r, warning=FALSE, message=FALSE}
+hullplot_facet <- 
+  ggplot(richness_grid_hulls) +
+  geom_sf(data = land, fill = "grey", size = 0.1) +
+  geom_sf(aes(fill = std_richness), color = NA) +
+  scale_fill_viridis() +
+  scale_x_continuous(breaks = c(-84)) +
+  theme_bw() + 
+  theme(strip.background = element_blank(),
+            legend.position = "bottom") +
+  labs(fill = "std(Species Richness)") +
+  facet_wrap(~dataset, nrow=1)
+
+diffplot_2 <- ggplot(richness_diff_hulls) +
+  geom_sf(data = land, fill = "grey", size = 0.1) +
+  geom_sf(aes(fill = std_difference), color = NA) +
+  scale_fill_viridis() +
+  scale_x_continuous(breaks = c(-84)) +
+  theme_void() + 
+  theme(strip.background = element_blank()) +
+  labs(fill = "std(Species Gap)") +
+  theme(strip.background = element_blank(),
+        legend.position = c(0.15, 0.4)) 
+
+sp_rich_graph <- 
+  ggplot(sp_rich %>% arrange(dataset), 
+         aes(x=latitude, y=num_species, color=dataset, group=dataset)) +
+  geom_point(pch=21, alpha=0.7) +
+  scale_color_manual(values = c("orange", "dodgerblue")) +
+  theme_classic() +
+  ylab("Species Richness") +
+  xlab("Latitude") +
+  theme(strip.background = element_blank(),
+        legend.position = "bottom",
+        legend.title = element_blank())
+
+sp_rich_graph_abs <- 
+  ggplot(sp_rich %>% arrange(dataset), 
+         aes(abs(latitude), num_species, color=dataset)) +
+  geom_point(pch=21, alpha=0.7) +
+  scale_color_manual(values = c("orange", "dodgerblue")) +
+  theme_classic() +
+  ylab("Species Richness") +
+  xlab("abs(Latitude)") +
+  theme(strip.background = element_blank(),
+        legend.position = "bottom",
+        legend.title = element_blank())
+
+middle <- plot_grid(sp_rich_graph, sp_rich_graph_abs, nrow=1)
+fig1 <- plot_grid(diffplot_2, middle, hullplot_facet, labels=c("A","B","C"), nrow=3, rel_heights = c(1,0.7,0.7))
+
+pdf("fig1.pdf",width=8, height=10)
+fig1
+dev.off()
+
+```
+
+Let's try a more
+
+
+
+
+Lastly, let's create a table summarizing the key findings of out literature review:
+
+```{r, warning=FALSE, message=FALSE}
+f_lit <- file.path(data_dir, "congen_lit_review.csv")
+lit <- read_csv(f_lit)
+n_study <- nrow(lit)
+```
+
+This is the proportion of studies that use Sanger Sequencing with a first or last author in the Global South: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South") %>%
+  filter(`Sequencing Method`=="Sanger Sequencing") %>% nrow()
+n_part
+n_part/n_study
+```
+
+...versus the Global North: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>%
+  filter(`Sequencing Method`=="Sanger Sequencing") %>% nrow()
+n_part
+n_part/n_study
+```
+
+Here is the same comparison for microsatellites: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South") %>%
+  filter(`Sequencing Method`=="Microsatellites") %>% nrow()
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>%
+  filter(`Sequencing Method`=="Microsatellites") %>% nrow()
+n_part
+n_part/n_study
+```
+
+And for reduced representation approaches: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South") %>%
+  filter(`Sequencing Method`=="Reduced Representation") %>% nrow()
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>%
+  filter(`Sequencing Method`=="Reduced Representation") %>% nrow()
+n_part
+n_part/n_study
+```
+
+For WGS:
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South") %>%
+  filter(`Sequencing Method`=="WGS") %>% nrow()
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>%
+  filter(`Sequencing Method`=="WGS") %>% nrow()
+n_part
+n_part/n_study
+```
+
+...and "Other":
+
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South") %>%
+  filter(`Sequencing Method`=="Other") %>% nrow()
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>%
+  filter(`Sequencing Method`=="Other") %>% nrow()
+n_part
+n_part/n_study
+```
+
+Let's repeat all that, but for taxonomic focus: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sequencing Method`=="Sanger Sequencing") %>% nrow()
+n_part
+n_part/n_study
+```
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sequencing Method`=="Sanger Sequencing") %>% nrow()
+n_part
+n_part/n_study
+```
+
+Here is the same comparison for microsatellites: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sequencing Method`=="Microsatellites") %>% nrow()
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sequencing Method`=="Microsatellites") %>% nrow()
+n_part
+n_part/n_study
+```
+
+And for reduced representation approaches: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sequencing Method`=="Reduced Representation") %>% nrow()
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sequencing Method`=="Reduced Representation") %>% nrow()
+n_part
+n_part/n_study
+```
+
+For WGS:
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sequencing Method`=="WGS") %>% nrow()
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sequencing Method`=="WGS") %>% nrow()
+n_part
+n_part/n_study
+```
+
+...and "Other":
+
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sequencing Method`=="Other") %>% nrow()
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sequencing Method`=="Other") %>% nrow()
+n_part
+n_part/n_study
+```
+
+Let's summarize some other aspects of the review. Here are the proportion of scientists with a global north affiliation: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>% nrow()
+n_part
+n_part/n_study
+```
+
+...and taxa with the same: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>% nrow()
+n_part
+n_part/n_study
+```
+
+Let's also summarize sequencing across regions by study goal:  
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both") %>% 
+  filter(`Study Focus`=="Identification / Sexing / Taxonomy / Systematics") %>% nrow
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both") %>% 
+  filter(`Study Focus`=="Population Structure / Gene Flow / Diversity / Demographic History" |
+        `Study Focus`== "Population Structure / Gene Flow / Diversity / Demographic History / Hybridix" ) %>% nrow
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both") %>% 
+  filter(`Study Focus`== "Selection / GWAS / Runs of Homozygosity / Adaptive Potential / Gene Expression") %>% nrow
+n_part
+n_part/n_study
+```
+
+Now for Global North authors: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global North" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global North" | `Senior Author Origin`=="Both") %>% 
+  filter(`Study Focus`=="Identification / Sexing / Taxonomy / Systematics") %>% nrow
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global North" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global North" | `Senior Author Origin`=="Both") %>% 
+  filter(`Study Focus`=="Population Structure / Gene Flow / Diversity / Demographic History" |
+        `Study Focus`== "Population Structure / Gene Flow / Diversity / Demographic History / Hybridix" ) %>% nrow
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`First Author Origin`=="Global North" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global North" | `Senior Author Origin`=="Both") %>% 
+  filter(`Study Focus`== "Selection / GWAS / Runs of Homozygosity / Adaptive Potential / Gene Expression") %>% nrow
+n_part
+n_part/n_study
+```
+
+And now for taxa: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>% 
+  filter(`Study Focus`=="Identification / Sexing / Taxonomy / Systematics") %>% nrow
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>% 
+  filter(`Study Focus`=="Population Structure / Gene Flow / Diversity / Demographic History" |
+        `Study Focus`== "Population Structure / Gene Flow / Diversity / Demographic History / Hybridix" ) %>% nrow
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>% 
+  filter(`Study Focus`== "Selection / GWAS / Runs of Homozygosity / Adaptive Potential / Gene Expression") %>% nrow
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>% 
+  filter(`Study Focus`=="Identification / Sexing / Taxonomy / Systematics") %>% nrow
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>% 
+  filter(`Study Focus`=="Population Structure / Gene Flow / Diversity / Demographic History" |
+        `Study Focus`== "Population Structure / Gene Flow / Diversity / Demographic History / Hybridix" ) %>% nrow
+n_part
+n_part/n_study
+```
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>% 
+  filter(`Study Focus`== "Selection / GWAS / Runs of Homozygosity / Adaptive Potential / Gene Expression") %>% nrow
+n_part
+n_part/n_study
+```

@@ -18,27 +18,27 @@ datasets summary genome taxon mammalia --reference --as-json-lines | dataformat 
 datasets summary genome taxon squamata --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > squamates.tsv
 ```
 
-...insects:
-
-```
-datasets summary genome taxon insecta --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > insects.tsv
-```
-
-
-...flowering plants: 
-
-```
-datasets summary genome taxon mesangiospermae --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > flowers.tsv
-```
-
-...ray-finned fish: 
-
-```
-datasets summary genome taxon Actinopterygii --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > actinopterygii.tsv
-```
-
-...and amphibians:
+...amphibians:
 
 ```
 datasets summary genome taxon amphibia --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > amphibia.tsv
+```
+
+
+...turtles: 
+
+```
+datasets summary genome taxon testudine --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > testudines.tsv
+```
+
+...crocodiles: 
+
+```
+datasets summary genome taxon crocodylia --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > crocodylia.tsv
+```
+
+...and tuataras: 
+
+```
+datasets summary genome taxon tuatara --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > tuatara.tsv
 ```
