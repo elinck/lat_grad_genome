@@ -1,0 +1,796 @@
+Assembly Accession	Assembly Name	Annotation Name	Annotation Release Date	Organism Name
+GCF_027475565.1	VMU_Ajub_asm_v1.0	GCF_027475565.1-RS_2023_04	2023-04-03	Acinonyx jubatus
+GCA_029890205.1	ASM2989020v1			Acomys cahirinus
+GCA_907164435.1	mAcoDim1_REL_1905			Acomys dimidiatus
+GCA_907164505.1	mAcoKem2_REL_1905			Acomys kempi
+GCA_907169655.1	mAcoPer2_REL_1905			Acomys percivali
+GCF_903995435.1	mAcoRus1.1	GCF_903995435.1-RS_2023_02	2023-02-26	Acomys russatus
+GCA_019593525.1	ASM1959352v1			Addax nasomaculatus
+GCA_011751065.1	L.cinereus_Cryan_1219_p1.0			Aeorestes cinereus
+GCA_006408695.1	IMP			Aepyceros melampus
+GCF_002007445.2	ASM200744v3	NCBI Ailuropoda melanoleuca Annotation Release 103	2021-05-24	Ailuropoda melanoleuca
+GCA_002007465.1	ASM200746v1			Ailurus styani
+GCA_006408545.1	HBT			Alcelaphus buselaphus
+GCA_015832495.2	NRM_Aalces_2_0.fsa			Alces alces
+GCA_963919705.1	Aoec_v1			Alexandromys oeconomus
+GCA_963574245.1	PGDP_AllNig			Allenopithecus nigroviridis
+GCA_963574325.1	PGDP_AllLho			Allochrocebus lhoesti
+GCA_963574925.1	PGDP_AllPre			Allochrocebus preussi
+GCA_963575195.1	PGDP_AllSol			Allochrocebus solatus
+GCA_963574145.1	PGDP_AloBel			Alouatta belzebul
+GCA_963575295.1	PGDP_AloCar			Alouatta caraya
+GCA_963575205.1	PGDP_AloDis			Alouatta discolor
+GCA_963574365.1	PGDP_AloJua			Alouatta juara
+GCA_963573945.1	PGDP_AloMac			Alouatta macconnelli
+GCA_004027835.1	AloPal_v1_BIUU			Alouatta palliata
+GCA_963574235.1	PGDP_AloPur			Alouatta seniculus puruensis
+GCA_004027475.1	AnoCau_v1_BIUU			Anoura caudifer
+GCF_016432865.1	AdamAnt_v2	GCF_016432865.1-RS_2023_02	2023-02-25	Antechinus flavipes
+GCA_016696395.1	USYD_AStu_M			Antechinus stuartii
+GCA_006408585.1	SGB			Antidorcas marsupialis
+GCA_007570785.1	GSC_phorn_1.0			Antilocapra americana
+GCA_027563665.1	DD_ASM_mAP_20210503			Antrozous pallidus
+GCA_963573465.1	PGDP_AotAza			Aotus azarai
+GCA_963574505.1	PGDP_AotGri			Aotus griseimembra
+GCF_030222135.1	86718_ANA_hifiasm-v0.15.2.pri	GCF_030222135.1-RS_2024_04	2024-04-07	Aotus nancymaae
+GCA_963574785.1	PGDP_AotTri			Aotus trivirgatus
+GCA_963573775.1	PGDP_AotVoc			Aotus vociferans
+GCA_004027875.1	AplRuf_v1_BIUU			Aplodontia rufa
+GCA_964023405.1	mApoAgr2.1			Apodemus agrarius
+GCA_002335545.1	Aspe_assembly01			Apodemus speciosus
+GCF_947179515.1	mApoSyl1.1	GCF_947179515.1-RS_2023_02	2023-02-25	Apodemus sylvaticus
+GCA_963573935.1	PGDP_ArcCal			Arctocebus calabarensis
+GCA_900642305.1	arcGaz3			Arctocephalus gazella
+GCA_028646355.1	Arctocephalus_townsendi_HiC			Arctocephalus townsendi
+GCA_038363225.1	mArtInt1.hap2			Artibeus intermedius
+GCF_021234435.1	CSHL_Jam_final	GCF_021234435.1-RS_2023_03	2023-03-03	Artibeus jamaicensis
+GCA_038363175.2	mArtLit1.hap2			Artibeus lituratus
+GCF_011762505.1	mArvNil1.pat.X	NCBI Arvicanthis niloticus Annotation Release 100	2020-05-13	Arvicanthis niloticus
+GCF_903992535.2	mArvAmp1.2	NCBI Arvicola amphibius Annotation Release 101	2021-06-11	Arvicola amphibius
+GCA_033961575.1	ASM3396157v1			Aselliscus stoliczkanus
+GCA_963573605.1	PGDP_AteBel			Ateles belzebuth
+GCA_963574935.1	PGDP_AteCha			Ateles chamek
+GCA_036589455.1	ASM3658945v1			Ateles fusciceps
+GCA_023783555.1	ASM2378355v1			Ateles geoffroyi
+GCA_916098195.1	ORGONE_01			Ateles hybridus
+GCA_963573555.1	PGDP_AteMar			Ateles marginatus
+GCA_963573985.1	PGDP_AtePan			Ateles paniscus
+GCA_963575035.1	PGDP_AvaLan			Avahi laniger
+GCA_963573525.1	PGDP_AvaPey			Avahi peyrierasi
+GCA_003798545.1	ASM379854v1			Axis porcinus
+GCA_028533215.1	Babyrousa_celebensis_HiC			Babyrousa celebensis
+GCF_949987535.1	mBalAcu1.1	GCF_949987535.1-RS_2023_06	2023-06-22	Balaenoptera acutorostrata
+GCA_000978805.1	ASM97880v1			Balaenoptera bonaerensis
+GCF_009873245.2	mBalMus1.pri.v3	NCBI Balaenoptera musculus Annotation Release 100	2020-10-26	Balaenoptera musculus
+GCA_023338255.1	SBiKF_Bphy_ph2			Balaenoptera physalus
+GCF_028023285.1	mBalRic1.hap2	GCF_028023285.1-RS_2023_09	2023-09-29	Balaenoptera ricei
+GCA_004027495.1	BeaHun_v1_BIUU			Beatragus hunteri
+GCA_023548195.1	mBetpen1.pri.20210916			Bettongia penicillata ogilbyi
+GCF_000754665.1	Bison_UMD1.0	NCBI Bison bison bison Annotation Release 100	2014-12-23	Bison bison bison
+GCA_963879515.1	ETH_BisBon1			Bison bonasus
+GCA_007844835.1	NRC_Mithun_1			Bos frontalis
+GCA_014182915.2	ARS_UOA_Gaur_1.1			Bos gaurus
+GCA_946052875.1	ARS_Pied_mat1.0			Bos gaurus x Bos taurus
+GCA_005887515.3	BosGru3.1			Bos grunniens
+GCA_009493645.1	ARS_UNL_BGru_maternal_1.0_p			Bos grunniens x Bos taurus
+GCF_000247795.1	Bos_indicus_1.0	NCBI Bos indicus Annotation Release 100	2017-01-04	Bos indicus
+GCF_003369695.1	UOA_Brahman_1	NCBI Bos indicus x Bos taurus Annotation Release 100	2018-12-21	Bos indicus x Bos taurus
+GCF_032452875.1	ARS-OSU_banteng_1.0	GCF_032452875.1-RS_2023_12	2023-12-07	Bos javanicus
+GCF_000298355.1	BosGru_v2.0	NCBI Bos mutus Annotation Release 101	2015-10-23	Bos mutus
+GCF_002263795.3	ARS-UCD2.0	GCF_002263795.3-RS_2023_09	2023-09-28	Bos taurus
+GCA_018282465.1	ARS_Simm1.0			Bos taurus x Bison bison
+GCA_004027775.1	BraVar_v1_BIUU			Bradypus variegatus
+GCF_019923935.1	NDDB_SH_1	NCBI Bubalus bubalis Annotation Release 103	2021-11-11	Bubalus bubalis
+GCA_025584935.1	MNHNYannick_LA_1			Bubalus depressicornis
+GCF_029407905.1	PCC_UOA_SB_1v2	GCF_029407905.1-RS_2024_02	2024-02-12	Bubalus kerabau
+GCF_023091745.1	Takin1.1	GCF_023091745.1-RS_2023_02	2023-02-25	Budorcas taxicolor
+GCA_029593785.1	MVZ_CabUni_1.0			Cabassous unicinctus
+GCA_963573425.1	PGDP_CacAyr			Cacajao ayresi
+GCA_963573955.1	PGDP_CacCal			Cacajao calvus
+GCA_963573795.1	PGDP_CacHos			Cacajao hosomi
+GCA_963573385.1	PGDP_CacMel			Cacajao melanocephalus
+GCA_963573925.1	PGDP_CalGoe			Callimico goeldii
+GCA_963573515.1	PGDP_CalGeo			Callithrix geoffroyi
+GCF_011100555.1	mCalJa1.2.pat.X	GCF_011100555.1-RS_2023_03	2023-03-02	Callithrix jacchus
+GCA_963573495.1	PGDP_CalKuh			Callithrix kuhlii
+GCF_003265705.1	ASM326570v1	NCBI Callorhinus ursinus Annotation Release 100	2018-07-18	Callorhinus ursinus
+GCF_000767855.1	Ca_bactrianus_MBC_1.0	NCBI Camelus bactrianus Annotation Release 102	2021-12-06	Camelus bactrianus
+GCF_036321535.1	mCamDro1.pat	GCF_036321535.1-RS_2024_04	2024-04-10	Camelus dromedarius
+GCF_009834535.1	BCGSAC_Cfer_1.0	NCBI Camelus ferus Annotation Release 102	2020-02-11	Camelus ferus
+GCA_034620425.1	Cla-1			Canis latrans
+GCF_003254725.2	ASM325472v2	NCBI Canis lupus dingo Annotation Release 102	2022-06-24	Canis lupus dingo
+GCF_011100685.1	UU_Cfam_GSD_1.0	NCBI Canis lupus familiaris Annotation Release 106	2020-12-08	Canis lupus familiaris
+GCA_029224305.1	Cmar_C18_SBIK-F_TBG_1			Caperea marginata
+GCA_000978405.1	CapAeg_1.0			Capra aegagrus
+GCA_038502695.1	ASM3850269v1			Capra falconeri
+GCF_001704415.2	ARS1.2	NCBI Capra hircus Annotation Release 102	2021-05-24	Capra hircus
+GCA_006410555.1	IBX			Capra ibex
+GCA_003182615.2	ASM318261v2			Capra sibirica
+GCA_951849835.1	ETH_CapCap1			Capreolus capreolus
+GCA_012922965.1	ASM1292296v1			Capreolus pygargus
+GCA_032405125.2	serow.2			Capricornis sumatraensis
+GCA_004027915.1	CapPil_v1_BIUU			Capromys pilorides
+GCA_016801355.1	CarCar1.0			Caracal caracal
+GCF_000164805.1	Tarsius_syrichta-2.0.1	NCBI Carlito syrichta Annotation Release 101	2017-06-27	Carlito syrichta
+GCA_004027735.1	CarPer_v1_BIUU			Carollia perspicillata
+GCF_001984765.1	C.can genome v1.0	NCBI Castor canadensis Annotation Release 100	2017-02-09	Castor canadensis
+GCA_004024745.2	CatWag_v2_BIUU_UCD			Catagonus wagneri
+GCA_000688575.1	CavAp1.0			Cavia aperea
+GCF_034190915.1	mCavPor4.1	GCF_034190915.1-RS_2024_02	2024-02-14	Cavia porcellus
+GCA_004027695.1	CavTsc_v1_BIUU			Cavia tschudii
+GCA_963575025.1	PGDP_CebNiv			Cebuella niveiventris
+GCA_963575105.1	PGDP_CebPyg			Cebuella pygmaea
+GCA_023783575.1	ASM2378357v1			Cebus albifrons
+GCF_001604975.1	Cebus_imitator-1.0	NCBI Cebus imitator Annotation Release 101	2020-11-14	Cebus imitator
+GCA_963574745.1	PGDP_CebOli			Cebus olivaceus
+GCA_963574255.1	PGDP_CebUni			Cebus unicolor
+GCA_027257055.1	ASM2725705v1			Cephalopachus bancanus
+GCA_006410635.1	HVD			Cephalophus harveyi
+GCF_000283155.1	CerSimSim1.0	NCBI Ceratotherium simum simum Annotation Release 101	2015-11-25	Ceratotherium simum simum
+GCF_000955945.1	Caty_1.0	NCBI Cercocebus atys Annotation Release 100	2015-03-23	Cercocebus atys
+GCA_963574065.1	PGDP_CerChr			Cercocebus chrysogaster
+GCA_963574135.1	PGDP_CerTor			Cercocebus torquatus
+GCA_023783535.1	ASM2378353v1			Cercopithecus albogularis
+GCA_963574115.1	PGDP_CerAsc			Cercopithecus ascanius
+GCA_963574615.1	PGDP_CerLow			Cercopithecus campbelli lowei
+GCA_963575225.1	PGDP_CerCep			Cercopithecus cephus
+GCA_963574765.1	PGDP_CerDia			Cercopithecus diana
+GCA_963574815.1	PGDP_CerHam			Cercopithecus hamlyni
+GCA_028627265.1	Cercopithecus_mitis_HiC			Cercopithecus mitis
+GCA_014849445.1	KIZ_CMon_1.0			Cercopithecus mona
+GCA_963574685.1	PGDP_CerNeg			Cercopithecus neglectus
+GCA_963575045.1	PGDP_CerNic			Cercopithecus nictitans
+GCA_963575065.1	PGDP_CerPet			Cercopithecus petaurista
+GCA_963575055.1	PGDP_CerPog			Cercopithecus pogonias
+GCA_963573595.1	PGDP_CerRol			Cercopithecus roloway
+GCA_006408465.1	WLD			Cervus albirostris
+GCF_019320065.1	ASM1932006v1	NCBI Cervus canadensis Annotation Release 100	2021-08-31	Cervus canadensis
+GCF_910594005.1	mCerEla1.1	NCBI Cervus elaphus Annotation Release 100	2021-09-20	Cervus elaphus
+GCA_010411085.1	CEY_v1	Annotation submitted by Institute of Special Wild Economic Animals and Plants, Chinese Academy of Agricultural Sciences	2020-04-13	Cervus hanglu yarkandensis
+GCA_040085125.1	ASM4008512v1			Cervus nippon
+GCA_004027955.1	ChaVel_v1_BIUU			Chaetophractus vellerosus
+GCA_963574435.1	PGDP_CheMaj			Cheirogaleus major
+GCA_008086735.1	ASM808673v1			Cheirogaleus medius
+GCA_963573755.1	PGDP_CheLuc			Cheracebus lucifer
+GCA_963574535.1	PGDP_CheLug			Cheracebus lugens
+GCA_963574635.1	PGDP_CheReg			Cheracebus regulus
+GCA_963574645.1	PGDP_CheTor			Cheracebus torquatus
+GCF_000276665.1	ChiLan1.0	NCBI Chinchilla lanigera Annotation Release 101	2015-07-27	Chinchilla lanigera
+GCF_950005125.1	mChiNiv1.1	GCF_950005125.1-RS_2023_06	2023-06-26	Chionomys nivalis
+GCA_963573965.1	PGDP_ChiIsr			Chiropotes israelita
+GCA_963574175.1	PGDP_ChiSag			Chiropotes sagulatus
+GCA_023783515.1	ASM2378351v1			Chlorocebus aethiops
+GCA_963575115.1	PGDP_ChlPyg			Chlorocebus pygerythrus
+GCF_015252025.1	Vero_WHO_p1.0	NCBI Chlorocebus sabaeus Annotation Release 102	2020-11-23	Chlorocebus sabaeus
+GCF_015220235.1	mChoDid1.pri	NCBI Choloepus didactylus Annotation Release 100	2020-11-16	Choloepus didactylus
+GCA_000164785.2	C_hoffmanni-2.0.1			Choloepus hoffmanni
+GCF_000296735.1	ChrAsi1.0	NCBI Chrysochloris asiatica Annotation Release 100	2014-02-10	Chrysochloris asiatica
+GCA_028533335.1	Chrysocyon_brachyurus_HiC			Chrysocyon brachyurus
+GCA_028534165.1	Coendou_prehensilis_HiC			Coendou prehensilis
+GCF_000951035.1	Cang.pa_1.0	NCBI Colobus angolensis palliatus Annotation Release 100	2015-03-26	Colobus angolensis palliatus
+GCA_030247045.1	ASM3024704v1			Colobus guereza
+GCA_963574725.1	PGDP_ColPol			Colobus polykomos
+GCF_000260355.1	ConCri1.0	NCBI Condylura cristata Annotation Release 101	2015-06-05	Condylura cristata
+GCA_006408615.1	BWD			Connochaetes taurinus
+GCA_026230045.1	mCorTow1.0.hap2			Corynorhinus townsendii
+GCA_004027555.1	CraTho_v1_BIUU			Craseonycteris thonglongyai
+GCA_026225945.1	Cans_v1.0_COR			Cricetomys ansorgei
+GCA_004027575.1	CriGam_v1_BIUU			Cricetomys gambianus
+GCF_003668045.3	CriGri-PICRH-1.0	NCBI Cricetulus griseus Annotation Release 104	2020-06-25	Cricetulus griseus
+GCA_004027635.1	CroInd_v1_BIUU			Crocidura indochinensis
+GCA_008692635.1	BGI_CrCroc_1.0	Annotation submitted by BGI	2020-01-14	Crocuta crocuta
+GCA_028646485.1	Cryptoprocta_ferox_HiC			Cryptoprocta ferox
+GCA_021461705.1	Cryptotis parva assembly 1.0			Cryptotis parvus
+GCA_004027205.1	CteGun_v1_BIUU			Ctenodactylus gundi
+GCA_004027165.1	CteSoc_v1_BIUU			Ctenomys sociabilis
+GCA_004365215.1	CunPac_v1_BIUU			Cuniculus paca
+GCF_027409185.1	mCynVol1.pri	GCF_027409185.1-RS_2024_02	2024-02-16	Cynocephalus volans
+GCA_009793145.1	ASM979314v1			Cynopterus brachyotis
+GCA_030015415.1	ASM3001541v1			Cynopterus sphinx
+GCF_033118175.1	ASM3311817v1	GCF_033118175.1-RS_2023_11	2023-11-29	Dama dama
+GCA_006408505.1	CTB			Damaliscus lunatus
+GCA_004363535.1	DasPun_v1_BIUU			Dasyprocta punctata
+GCF_030445035.1	mDasNov1.hap2	GCF_030445035.1-RS_2023_07	2023-07-18	Dasypus novemcinctus
+GCA_030445035.2	mDasNov1.1.hap2			Dasypus novemcinctus
+GCA_020854095.1	UniMelb_DasViv_v1.0			Dasyurus viverrinus
+GCA_023783475.1	ASM2378347v1			Daubentonia madagascariensis
+GCF_002288925.2	ASM228892v3	NCBI Delphinapterus leucas Annotation Release 101	2019-09-06	Delphinapterus leucas
+GCF_949987515.1	mDelDel1.1	GCF_949987515.1-RS_2023_09	2023-09-30	Delphinus delphis
+GCF_022682495.1	HLdesRot8A	GCF_022682495.1-RS_2023_02	2023-02-27	Desmodus rotundus
+GCA_022682495.2	HLdesRot8A.1			Desmodus rotundus
+GCA_014189135.1	NRM_Dsumatrensis_v1.fasta			Dicerorhinus sumatrensis harrissoni
+GCF_020826845.1	mDicBic1.mat.cur	GCF_020826845.1-RS_2023_07	2023-07-26	Diceros bicornis minor
+GCA_028555095.1	ASM2855509v1			Dicrostonyx torquatus
+GCA_004027595.1	DinBra_v1_BIUU			Dinomys branickii
+GCA_024711535.1	mDipMer1.0.p			Dipodomys merriami
+GCF_000151885.1	Dord_2.0	NCBI Dipodomys ordii Annotation Release 100	2015-06-24	Dipodomys ordii
+GCF_019054845.1	ASM1905484v1	NCBI Dipodomys spectabilis Annotation Release 100	2021-07-20	Dipodomys spectabilis
+GCA_004024685.1	DipSte_v1_BIUU			Dipodomys stephensi
+GCA_036346955.1	IOZCAS_Dsag_1.1			Dipus sagitta
+GCA_004027295.1	DolPat_v1_BIUU			Dolichotis patagonum
+GCF_019393635.1	mDroGli1.pri	NCBI Dromiciops gliroides Annotation Release 100	2021-09-23	Dromiciops gliroides
+GCA_030035585.1	mDugDug1.hap1			Dugong dugon
+GCF_000313985.2	ASM31398v2	NCBI Echinops telfairi Annotation Release 103	2021-12-02	Echinops telfairi
+GCA_028627145.1	Eidolon_dupreanum_HiC			Eidolon dupreanum
+GCA_000465285.1	ASM46528v1			Eidolon helvum
+GCA_020311275.1	ASM2031127v1			Eira barbara
+GCA_021018665.1	miluL			Elaphurus davidianus
+GCF_000299155.1	EleEdw1.0	NCBI Elephantulus edwardii Annotation Release 100	2014-02-10	Elephantulus edwardii
+GCF_024166365.1	mEleMax1 primary haplotype	GCF_024166365.1-RS_2023_02	2023-02-26	Elephas maximus indicus
+GCA_001685075.1	ASM168507v1			Ellobius lutescens
+GCA_001685095.1	ETalpinus_0.1			Ellobius talpinus
+GCF_002288905.1	ASM228890v2	NCBI Enhydra lutris kenyoni Annotation Release 100	2017-09-19	Enhydra lutris kenyoni
+GCA_003508835.1	Espe.v1			Eonycteris spelaea
+GCA_035773235.1	ASM3577323v1			Eospalax fontanierii
+GCF_027574615.1	DD_ASM_mEF_20220401	GCF_027574615.1-RS_2023_03	2023-03-28	Eptesicus fuscus
+GCA_030846915.1	BLF_Eptnil_asm_v1.0	Annotation submitted by Finnish museum of Natural history	2023-08-21	Eptesicus nilssonii
+GCF_016077325.2	ASM1607732v2	NCBI Equus asinus Annotation Release 101	2021-10-19	Equus asinus
+GCF_002863925.1	EquCab3.0	NCBI Equus caballus Annotation Release 103	2018-01-11	Equus caballus
+GCF_000696695.1	Burgud	NCBI Equus przewalskii Annotation Release 100	2014-07-10	Equus przewalskii
+GCF_021613505.1	UCLA_HA_Equagga_1.0	GCF_021613505.1-RS_2023_03	2023-03-03	Equus quagga
+GCA_028451465.1	mEreDor1.pri			Erethizon dorsatum
+GCF_950295315.1	mEriEur2.1	GCF_950295315.1-RS_2023_10	2023-10-04	Erinaceus europaeus
+GCA_023783455.1	ASM2378345v1			Erythrocebus patas
+GCA_028021215.1	mEscRob2.pri			Eschrichtius robustus
+GCF_028564815.1	mEubGla1.1.hap2.+ XY	GCF_028564815.1-RS_2023_12	2023-12-01	Eubalaena glacialis
+GCA_004363455.1	EubJap_v1_BIUU			Eubalaena japonica
+GCA_006408755.1	TMG			Eudorcas thomsonii
+GCA_963573435.1	PGDP_EulAlb			Eulemur albifrons
+GCA_963574965.1	PGDP_EulCor			Eulemur coronatus
+GCA_001262665.1	Eflavifronsk33QCA			Eulemur flavifrons
+GCA_963575015.1	PGDP_EulCol			Eulemur fulvus collaris
+GCA_001262655.1	Emacaco_refEf_BWA_oneround			Eulemur macaco
+GCA_028534055.1	Eulemur_mongoz_HiC			Eulemur mongoz
+GCA_963574895.1	PGDP_EulRub			Eulemur rubriventer
+GCA_963574465.1	PGDP_EulRuf			Eulemur rufus
+GCA_963573705.1	PGDP_EulSan			Eulemur sanfordi
+GCF_004028035.1	ASM402803v1	NCBI Eumetopias jubatus Annotation Release 100	2019-02-04	Eumetopias jubatus
+GCF_018350175.1	F.catus_Fca126_mat1.0	NCBI Felis catus Annotation Release 105	2021-10-27	Felis catus
+GCA_019924945.1	FelChav1.0			Felis chaus
+GCA_032458615.1	SNNU_BFC_1			Felis nigripes
+GCF_012274545.1	DMR_v1.0_HiC	NCBI Fukomys damarensis Annotation Release 102	2020-04-15	Fukomys damarensis
+GCA_023783435.1	ASM2378343v1			Galago moholi
+GCA_963575145.1	PGDP_GalSen			Galago senegalensis
+GCA_963574575.1	PGDP_GalDem			Galagoides demidoff
+GCA_019455555.1	Gpyr_1.0	Annotation submitted by Institute of Evolutionary Biology (CSIC-UPF)	2021-08-05	Galemys pyrenaicus
+GCF_000696425.1	G_variegatus-3.0.2	NCBI Galeopterus variegatus Annotation Release 100	2014-07-18	Galeopterus variegatus
+GCA_040207655.1	GeBurs			Geomys bursarius
+GCA_017591445.1	ASM1759144v1			Giraffa camelopardalis rothschildi
+GCA_013496395.1	ASM1349639v1			Giraffa tippelskirchi
+GCA_020662805.1	ASM2066280v1			Glaucomys volans
+GCA_004027185.1	GliGli_v1_BIUU			Glis glis
+GCF_963455315.1	mGloMel1.1	GCF_963455315.1-RS_2023_10	2023-10-19	Globicephala melas
+GCA_039655065.1	mGloMut1.hap1			Glossophaga mutica
+GCA_963575185.1	PGDP_GorBer			Gorilla beringei
+GCF_029281585.2	NHGRI_mGorGor1-v2.0_pri	GCF_029281585.2-RS_2024_02	2024-02-27	Gorilla gorilla gorilla
+GCF_016433145.1	AgileGrace	NCBI Gracilinanus agilis Annotation Release 100	2021-10-18	Gracilinanus agilis
+GCA_019843835.1	ASM1984383v1			Grammomys dolichurus
+GCF_004785775.1	NIH_TR_1.0	NCBI Grammomys surdaster Annotation Release 100	2019-04-18	Grammomys surdaster
+GCA_028646425.1	Grampus_griseus_HiC			Grampus griseus
+GCA_004027655.1	GraMur_v1_BIUU			Graphiurus murinus
+GCA_024510155.1	Gulo_gulo_luscus_R-V1.0	Annotation submitted by The Hospital for Sick Children	2022-08-04	Gulo gulo luscus
+GCA_011680675.1	LBP_v1			Gymnobelideus leadbeateri
+GCF_012393455.1	Tufts_HGry_1.1	NCBI Halichoerus grypus Annotation Release 100	2020-09-04	Halichoerus grypus
+GCA_963574485.1	PGDP_HapAla			Hapalemur griseus alaotrensis
+GCA_963575175.1	PGDP_HapMer			Hapalemur meridionalis
+GCA_963575155.1	PGDP_HapOcc			Hapalemur occidentalis
+GCA_028533245.1	Helarctos_malayanus_HiC			Helarctos malayanus
+GCA_004023845.1	HelPar_v1_BIUU			Helogale parvula
+GCA_004026825.1	HemHyl_v1_BIUU			Hemitragus hylocrius
+GCF_000247695.1	HetGla_female_1.0	NCBI Heterocephalus glaber Annotation Release 102	2017-05-19	Heterocephalus glaber
+GCA_028571685.1	mHetBru1.pri			Heterohyrax brucei
+GCA_023065765.1	ASM2306576v1			Hexaprotodon liberiensis
+GCF_030028045.1	mHipAmp2.hap2	GCF_030028045.1-RS_2023_06	2023-06-24	Hippopotamus amphibius kiboko
+GCF_001890085.2	ASM189008v1	NCBI Hipposideros armiger Annotation Release 100	2016-12-20	Hipposideros armiger
+GCA_031876335.1	mHipLar1.pri			Hipposideros larvatus
+GCA_021464545.1	ASM2146454v1			Hipposideros pendleburyi
+GCA_006942125.1	SCBI_HNig_1.0			Hippotragus niger niger
+GCF_000001405.40	GRCh38.p14	GCF_000001405.40-RS_2023_10	2023-10-02	Homo sapiens
+GCA_023748175.1	ASM2374817v1			Hoolock leuconedys
+GCF_003009895.1	ASM300989v1	NCBI Hyaena hyaena Annotation Release 100	2021-01-25	Hyaena hyaena
+GCA_004027455.1	HydHyd_v1_BIUU			Hydrochoerus hydrochaeris
+GCA_020226075.1	ASM2022607v1			Hydropotes inermis
+GCA_963574095.1	PGDP_HylAgi			Hylobates agilis
+GCA_963574335.1	PGDP_HylKlo			Hylobates klossii
+GCF_009828535.3	HMol_V3	GCF_009828535.3-RS_2023_07	2023-07-21	Hylobates moloch
+GCA_963573745.1	PGDP_HylMue			Hylobates muelleri
+GCA_021498465.1	ASM2149846v1			Hylobates pileatus
+GCA_019843855.1	ASM1984385v1			Hylomyscus alleni
+GCA_949752795.1	mHypAmp2.1			Hyperoodon ampullatus
+GCA_016801275.1	DSBC_Hbra_1.0			Hystrix brachyura
+GCA_004026905.1	HysCri_v1_BIUU			Hystrix cristata
+GCA_025583905.1	NENU_Iio_1.0			Ia io
+GCF_016881025.1	HiC_Itri_2	NCBI Ictidomys tridecemlineatus Annotation Release 103	2021-03-15	Ictidomys tridecemlineatus
+GCA_004363605.1	IndInd_v1_BIUU			Indri indri
+GCA_036417435.1	mIniGeo1.hap1			Inia geoffrensis
+GCF_020740685.1	mJacJac1.mat.Y.cur	NCBI Jaculus jaculus Annotation Release 102	2021-11-09	Jaculus jaculus
+GCA_006410655.1	DFW			Kobus ellipsiprymnus
+GCA_014926565.1	Klec_v1.0			Kobus leche leche
+GCF_026419965.1	mKogBre1 haplotype 1	GCF_026419965.1-RS_2023_08	2023-08-18	Kogia breviceps
+GCF_949774975.1	mLagAlb1.1	GCF_949774975.1-RS_2023_10	2023-10-05	Lagenorhynchus albirostris
+GCF_003676395.1	ASM367639v1	NCBI Lagenorhynchus obliquidens Annotation Release 100	2018-11-13	Lagenorhynchus obliquidens
+GCA_028533205.1	Lagorchestes_hirsutus_HiC			Lagorchestes hirsutus
+GCA_963574225.1	PGDP_LagLag			Lagothrix lagotricha
+GCA_013239585.1	ASM1323958v1			Lama glama chaku
+GCA_013239625.1	ASM1323962v1			Lama guanicoe cacsilensis
+GCA_004026805.1	LasBor_v1_BIUU			Lasiurus borealis
+GCF_020740605.2	mLemCat1.pri	NCBI Lemur catta Annotation Release 100	2021-12-08	Lemur catta
+GCA_963575285.1	PGDP_LeoFus			Leontocebus fuscicollis
+GCA_963575265.1	PGDP_LeoNig			Leontocebus nigricollis
+GCA_963574395.1	PGDP_LeoChr			Leontopithecus chrysomelas
+GCA_028533165.1	Leontopithecus_rosalia_HiC			Leontopithecus rosalia
+GCF_018350155.1	O.geoffroyi_Oge1_pat1.0	NCBI Leopardus geoffroyi Annotation Release 100	2021-12-07	Leopardus geoffroyi
+GCA_963573785.1	PGDP_LepAnk			Lepilemur ankaranensis
+GCA_963574875.1	PGDP_LepDor			Lepilemur dorsalis
+GCA_963574885.1	PGDP_LepRuf			Lepilemur ruficaudatus
+GCA_963573855.1	PGDP_LepSep			Lepilemur septentrionalis
+GCF_000349705.1	LepWed1.0	NCBI Leptonychotes weddellii Annotation Release 101	2019-09-26	Leptonychotes weddellii
+GCA_004026855.1	LepAme_v1_BIUU			Lepus americanus
+GCF_033115175.1	mLepTim1.pri	GCF_033115175.1-RS_2024_01	2024-01-05	Lepus europaeus
+GCA_036325905.1	CXZ			Lepus oiostolus
+GCA_009760805.1	CIBIO-ISEM_LeTim_1.1			Lepus timidus
+GCA_029532125.1	Ltowsendii_DMNS18807_Prim_1.0			Lepus townsendii
+GCF_000442215.2	Lipotes_vexillifer_v1.1	NCBI Lipotes vexillifer Annotation Release 100	2021-06-07	Lipotes vexillifer
+GCA_006410535.1	GRK			Litocranius walleri
+GCF_010015895.1	GSC_riverotter_1.0	NCBI Lontra canadensis Annotation Release 100	2020-03-10	Lontra canadensis
+GCA_907164525.1	mLopImh1.curated_primary_1811			Lophiomys imhausi
+GCA_023783235.1	ASM2378323v1			Lophocebus aterrimus
+GCA_963574355.1	PGDP_LorLyd			Loris lydekkerianus
+GCA_023783135.1	ASM2378313v1			Loris tardigradus
+GCF_030014295.1	mLoxAfr1.hap2	GCF_030014295.1-RS_2024_04	2024-04-02	Loxodonta africana
+GCF_902655055.1	mLutLut1.2	GCF_902655055.1-RS_2023_03	2023-03-03	Lutra lutra
+GCA_004216515.1	sis1-161031-pseudohap			Lycaon pictus
+GCF_007474595.2	mLynCan4.pri.v2	NCBI Lynx canadensis Annotation Release 102	2020-08-31	Lynx canadensis
+GCA_900661375.1	LYPA1.0	Annotation submitted by CNAG	2019-03-28	Lynx pardinus
+GCF_022079265.1	mLynRuf1.p	GCF_022079265.1-RS_2023_03	2023-03-03	Lynx rufus
+GCA_021188215.1	Marc_1.0			Macaca arctoides
+GCA_023783095.1	ASM2378309v1			Macaca assamensis
+GCA_026956025.1	MCyc01			Macaca cyclopis
+GCF_037993035.1	T2T-MFA8v1.0	GCF_037993035.1-RS_2024_05	2024-05-24	Macaca fascicularis
+GCA_003118495.1	macFus_1.0			Macaca fuscata fuscata
+GCA_963573825.1	PGDP_MacLeo			Macaca leonina
+GCA_963574855.1	PGDP_MacMau			Macaca maura
+GCF_003339765.1	Mmul_10	NCBI Macaca mulatta Annotation Release 103	2019-03-24	Macaca mulatta
+GCF_000956065.1	Mnem_1.0	NCBI Macaca nemestrina Annotation Release 101	2018-04-12	Macaca nemestrina
+GCA_928851695.1	mMacNir1.1			Macaca nigra
+GCA_963573735.1	PGDP_MacRad			Macaca radiata
+GCA_963574275.1	PGDP_MacSib			Macaca siberu
+GCA_023807365.1	ASM2380736v1			Macaca silenus
+GCF_024542745.1	ASM2454274v1	GCF_024542745.1-RS_2023_02	2023-02-26	Macaca thibetana thibetana
+GCA_963573625.1	PGDP_MacTon			Macaca tonkeana
+GCA_004027375.1	MacSob_v1_BIUU			Macroglossus sobrinus
+GCA_028583105.1	mf-2k			Macropus fuliginosus
+GCA_028627215.1	mg-2k			Macropus giganteus
+GCA_037893015.1	bilby.v1.9.chrom.fasta			Macrotis lagotis
+GCA_007922815.1	MacCal_v1_BIUU			Macrotus californicus
+GCA_006408675.1	KDD			Madoqua kirkii
+GCF_000951045.1	Mleu.le_1.0	NCBI Mandrillus leucophaeus Annotation Release 100	2015-03-26	Mandrillus leucophaeus
+GCA_023783085.1	ASM2378308v1			Mandrillus sphinx
+GCA_016801295.1	DSBC_Mcra_1.0			Manis crassicaudata
+GCA_032206105.1	ASM3220610v1			Manis culionensis
+GCF_014570535.1	YNU_ManJav_2.0	NCBI Manis javanica Annotation Release 101	2020-10-01	Manis javanica
+GCF_030020395.1	mManPen7.hap1	GCF_030020395.1-RS_2023_06	2023-06-15	Manis pentadactyla
+GCF_003676075.3	GSC_YBM_2.1	NCBI Marmota flaviventris Annotation Release 101	2020-05-21	Marmota flaviventris
+GCA_005280165.1	ASM528016v1			Marmota himalayana
+GCF_001458135.2	marMar	NCBI Marmota marmota marmota Annotation Release 101	2022-06-02	Marmota marmota marmota
+GCF_021218885.2	Marmota_monax_Labrador192_F-V1.1	GCF_021218885.2-RS_2023_07	2023-07-26	Marmota monax
+GCA_040207195.1	mMarVan1_a1.0			Marmota vancouverensis
+GCA_029410595.1	ASM2941059v1			Martes flavigula
+GCA_963455335.1	mMarMar1.1			Martes martes
+GCA_012583365.1	ASM1258336v1			Martes zibellina
+GCF_008632895.1	UCSF_Mcou_1	NCBI Mastomys coucha Annotation Release 100	2019-10-18	Mastomys coucha
+GCA_021653895.1	UFL_Mnatal_1.0			Mastomys natalensis
+GCA_004026885.1	MegLyr_v1_BIUU			Megaderma lyra
+GCA_004329385.1	megNov1			Megaptera novaeangliae
+GCF_922984935.1	mMelMel3.1 paternal haplotype	NCBI Meles meles Annotation Release 100	2022-01-18	Meles meles
+GCA_922984935.2	mMelMel3.2 paternal haplotype			Meles meles
+GCA_004024625.1	MelCap_v1_BIUU			Mellivora capensis
+GCA_036365155.1	Mmer_1.1			Meriones psammophilus
+GCF_030254825.1	Bangor_MerUng_6.1	GCF_030254825.1-RS_2023_10	2023-10-23	Meriones unguiculatus
+GCF_017639785.1	BCM_Maur_2.0	NCBI Mesocricetus auratus Annotation Release 103	2021-04-06	Mesocricetus auratus
+GCA_964148845.1	mMesBid2.hap2.1			Mesoplodon bidens
+GCF_025265405.1	mMesDen1 primary haplotype	GCF_025265405.1-RS_2023_10	2023-10-03	Mesoplodon densirostris
+GCA_963573565.1	PGDP_MicSch			Mico argentatus
+GCA_963574605.1	PGDP_MicHum			Mico humeralifer
+GCA_963574545.1	PGDP_CalHum			Mico humilis
+GCA_008750995.1	Mgri_1.0			Microcebus griseorufus
+GCA_008750955.1	Mmit_1.0			Microcebus mittermeieri
+GCF_000165445.2	Mmur_3.0	NCBI Microcebus murinus Annotation Release 101	2017-02-15	Microcebus murinus
+GCA_008750975.1	Mrav_1.0			Microcebus ravelobensis
+GCA_008750915.1	Mjon_1.0			Microcebus sp. 3 GT-2019
+GCA_008750935.1	Mtav_1.0			Microcebus tavaratra
+GCA_963924665.1	mMicMin1.1			Micromys minutus
+GCA_004026765.1	MicHir_v1_BIUU			Micronycteris hirsuta
+GCA_902806775.1	Field_vole_promethion_pilon			Microtus agrestis
+GCA_963919715.1	Marv_v2			Microtus arvalis
+GCA_028537955.1	mMicCal1.0.hap1			Microtus californicus
+GCF_014885135.2	M_Fortis_MF-2015_v1.1	GCF_014885135.2-RS_2023_02	2023-02-26	Microtus fortis
+GCA_020392405.1	ASM2039240v1			Microtus montanus
+GCF_000317375.1	MicOch1.0	NCBI Microtus ochrogaster Annotation Release 102	2018-10-12	Microtus ochrogaster
+GCF_018167655.1	Mior012	NCBI Microtus oregoni Annotation Release 100	2021-05-12	Microtus oregoni
+GCA_037038515.1	mMicPen1.hap1			Microtus pennsylvanicus
+GCA_019206885.2	ASM1920688v2			Microtus richardsoni
+GCF_001595765.1	Mnat.v1	NCBI Miniopterus natalensis Annotation Release 100	2016-04-08	Miniopterus natalensis
+GCA_964146895.1	mMinSch1.hap1.1			Miniopterus schreibersii
+GCA_963573445.1	PGDP_MioOgo			Miopithecus ogouensis
+GCA_028551445.1	Miopithecus_talapoin_HiC			Miopithecus talapoin
+GCF_029215605.1	mMirAng1.0.hap1	GCF_029215605.1-RS_2024_04	2024-04-19	Mirounga angustirostris
+GCF_011800145.1	KU_Mleo_1.0	NCBI Mirounga leonina Annotation Release 100	2020-06-09	Mirounga leonina
+GCA_004024645.1	MizCoq_v1_BIUU			Mirza coquereli
+GCA_008750895.1	Mzaz_1.0			Mirza zaza
+GCA_037176705.1	mMolAlv2.hap2			Molossus alvarezi
+GCF_014108415.1	mMolMol1.p	NCBI Molossus molossus Annotation Release 100	2020-09-25	Molossus molossus
+GCA_039880945.1	mMolNig1.hap1			Molossus nigricans
+GCF_027887165.1	mMonDom1.pri	GCF_027887165.1-RS_2023_05	2023-05-17	Monodelphis domestica
+GCF_005190385.1	NGI_Narwhal_1	NCBI Monodon monoceros Annotation Release 100	2019-05-16	Monodon monoceros
+GCA_005190385.3	NGI_Narwhal_2			Monodon monoceros
+GCA_004026545.1	MorMeg_v1_BIUU			Mormoops blainvillei
+GCF_022376915.1	ASM2237691v1	GCF_022376915.1-RS_2023_04	2023-04-13	Moschus berezovskii
+GCA_006461725.1	NPU_MCHR_1.0			Moschus chrysogaster
+GCA_004024705.2	MosMos_v2_BIUU_UCD			Moschus moschiferus
+GCA_004023785.1	MunMun_v1_BIUU			Mungos mungo
+GCA_020276665.1	ASM2027666v1			Muntiacus crinifrons
+GCA_020226025.1	ASM2022602v1			Muntiacus gongshanensis
+GCA_008782695.1	UCB_Mmun_1.0	Annotation submitted by University of California, Berkeley	2019-10-07	Muntiacus muntjak
+GCA_020226045.1	ASM2022604v1			Muntiacus reevesi
+GCA_039877825.1	ASM3987782v1			Muntiacus vaginalis
+GCA_004026665.1	MurFea_v1_BIUU			Murina aurata feae
+GCF_900094665.2	CAROLI_EIJ_v1.1	NCBI Mus caroli Annotation Release 101	2019-06-10	Mus caroli
+GCA_902729485.2	Mus_minutoides_I2396_v1			Mus minutoides
+GCF_000001635.27	GRCm39	GCF_000001635.27-RS_2024_02	2024-02-01	Mus musculus
+GCF_900095145.1	PAHARI_EIJ_v1.1	NCBI Mus pahari Annotation Release 101	2019-06-14	Mus pahari
+GCA_003336285.2	MUSP714_v2			Mus spicilegus
+GCA_921997135.2	SPRET_EiJ_v3			Mus spretus
+GCA_963383645.1	mMusAve1.1			Muscardinus avellanarius
+GCF_009829155.1	mMusErm1.Pri	NCBI Mustela erminea Annotation Release 100	2020-01-23	Mustela erminea
+GCA_963422785.1	Steppe Polecat genome assembly			Mustela eversmannii
+GCF_030435805.1	mMusLut2.pri	GCF_030435805.1-RS_2023_08	2023-08-23	Mustela lutreola
+GCF_022355385.1	MUSNIG.SB6536	GCF_022355385.1-RS_2023_09	2023-09-07	Mustela nigripes
+GCA_019141155.1	MusNiv_Pri1.0			Mustela nivalis
+GCF_011764305.1	ASM1176430v1.1	NCBI Mustela putorius furo Annotation Release 102	2021-10-29	Mustela putorius furo
+GCA_004027025.1	MyoCoy_v1_BIUU			Myocastor coypus
+GCF_902806735.1	Bank_vole1_10x	NCBI Myodes glareolus Annotation Release 100	2022-05-25	Myodes glareolus
+GCA_040207285.1	mMyoRut1_p1.0			Myodes rutilus
+GCF_000412655.1	ASM41265v1	NCBI Myotis brandtii Annotation Release 101	2015-10-26	Myotis brandtii
+GCF_963259705.1	mMyoDau2.1	GCF_963259705.1-RS_2023_09	2023-09-20	Myotis daubentonii
+GCF_000327345.1	ASM32734v1	NCBI Myotis davidii Annotation Release 101	2016-02-04	Myotis davidii
+GCA_038630795.1	ASM3863079v1			Myotis findleyi
+GCF_000147115.1	Myoluc2.0	NCBI Myotis lucifugus Annotation Release 102	2018-01-17	Myotis lucifugus
+GCF_014108235.1	mMyoMyo1.p	NCBI Myotis myotis Annotation Release 100	2020-09-25	Myotis myotis
+GCA_964094495.2	mMyoMys1.hap1.1			Myotis mystacinus
+GCA_036250175.1	ASM3625017v1			Myotis planiceps
+GCA_036010255.1	ASM3601025v1			Myotis ricketti
+GCA_035771395.1	ASM3577139v1			Myotis vivesi
+GCA_028538775.1	mMyoYum1.0.hap1			Myotis yumanensis
+GCA_023553655.1	mMyrfas1.20211206			Myrmecobius fasciatus
+GCA_004026745.1	MyrTri_v1_BIUU			Myrmecophaga tridactyla
+GCA_917880005.1	ORGONE_02			Nanger dama
+GCA_006408635.1	GTG			Nanger granti
+GCF_000622305.1	S.galili_v1.0	NCBI Nannospalax galili Annotation Release 102	2019-06-05	Nannospalax galili
+GCA_000772465.1	Charlie1.0			Nasalis larvatus
+GCA_028533885.1	Nasua_narica_HiC			Nasua narica
+GCA_025134845.1	SAF_Nshe_1.1			Neodon shergylaensis
+GCA_027422475.1	ASM2742247v1			Neofelis diardi
+GCF_028018385.1	mNeoNeb1.pri	GCF_028018385.1-RS_2023_07	2023-07-31	Neofelis nebulosa
+GCF_020171115.1	ASM_NN_V1	NCBI Neovison vison Annotation Release 100	2021-10-07	Neogale vison
+GCF_002201575.2	ASM220157v2	NCBI Neomonachus schauinslandi Annotation Release 101	2021-10-28	Neomonachus schauinslandi
+GCF_003031525.2	Neophocaena_asiaeorientalis_V1.1	NCBI Neophocaena asiaeorientalis asiaeorientalis Annotation Release 100	2018-04-20	Neophocaena asiaeorientalis asiaeorientalis
+GCA_001675575.1	ASM167557v1	Annotation submitted by University of Utah	2016-06-23	Neotoma lepida
+GCA_006410615.1	SUN			Neotragus moschatus
+GCA_006410875.1	RAL			Neotragus pygmaeus
+GCA_004026705.1	MicTal_v1_BIUU			Nesogale talazaci
+GCA_004026585.1	NocLep_v1_BIUU			Noctilio leporinus
+GCA_963574525.1	PGDP_NomAnn			Nomascus annamensis
+GCA_963574845.1	PGDP_NomCon			Nomascus concolor
+GCA_963574555.1	PGDP_NomGab			Nomascus gabriellae
+GCF_006542625.1	Asia_NLE_v1	NCBI Nomascus leucogenys Annotation Release 103	2019-09-09	Nomascus leucogenys
+GCA_023783065.1	ASM2378306v1			Nomascus siki
+GCA_028372415.1	mMacEug1.pri			Notamacropus eugenii
+GCA_036971965.2	NENU_Navi_2.0			Nyctalus aviator
+GCF_905146905.1	NYPRO_anot_genome	GCF_905146905.1-RS_2023_04	2023-04-13	Nyctereutes procyonoides
+GCA_023898255.1	ASM2389825v1			Nycticebus bengalensis
+GCF_027406575.1	mNycCou1.pri	GCF_027406575.1-RS_2023_03	2023-03-03	Nycticebus coucang
+GCA_007922795.1	NycHum_v1_BIUU			Nycticeius humeralis
+GCF_017591425.1	NIBS_Ocur_1.0	NCBI Ochotona curzoniae Annotation Release 100	2021-04-15	Ochotona curzoniae
+GCF_030435755.1	mOchPri1.hap1	GCF_030435755.1-RS_2023_07	2023-07-28	Ochotona princeps
+GCF_000260255.1	OctDeg1.0	NCBI Octodon degus Annotation Release 102	2018-01-16	Octodon degus
+GCA_002564305.1	Oct_mimax_AO248_v1			Octomys mimax
+GCF_000321225.1	Oros_1.0	NCBI Odobenus rosmarus divergens Annotation Release 101	2015-05-18	Odobenus rosmarus divergens
+GCA_020976825.1	BYU_Ohem_2021			Odocoileus hemionus
+GCF_002102435.1	Ovir.te_1.0	NCBI Odocoileus virginianus texanus Annotation Release 100	2017-04-25	Odocoileus virginianus texanus
+GCA_024291935.2	TBG_Okapi_asm_v1			Okapia johnstoni
+GCA_004026605.1	OndZib_v1_BIUU			Ondatra zibethicus
+GCA_949786405.1	OncAre_H1_v1			Onychomys arenicola
+GCA_949786385.1	OncLeu_H2_v1			Onychomys leucogaster
+GCF_903995425.1	mOncTor1.1	NCBI Onychomys torridus Annotation Release 100	2020-09-22	Onychomys torridus
+GCF_937001465.1	mOrcOrc1.1	GCF_937001465.1-RS_2023_02	2023-02-27	Orcinus orca
+GCA_009758055.1	ASM975805v1			Oreamnos americanus
+GCA_006410675.1	KSP			Oreotragus oreotragus
+GCA_004027895.1	AllBul_v1_BIUU			Orientallactaga bullata
+GCA_036365145.1	Osib_1.1			Orientallactaga sibirica
+GCF_004115215.2	mOrnAna1.pri.v4	NCBI Ornithorhynchus anatinus Annotation Release 105	2021-03-03	Ornithorhynchus anatinus
+GCF_000298275.1	OryAfe1.0	NCBI Orycteropus afer afer Annotation Release 101	2021-07-21	Orycteropus afer afer
+GCF_009806435.1	UM_NZW_1.0	GCF_009806435.1-RS_2023_02	2023-02-27	Oryctolagus cuniculus
+GCF_014754425.2	SCBI_Odam_1.1	NCBI Oryx dammah Annotation Release 100	2021-03-15	Oryx dammah
+GCA_003945745.1	UCDavis_Ogaz_1			Oryx gazella
+GCA_028564725.2	OtoMan_p1.0			Otocolobus manul
+GCA_017311455.1	Otocyon_megalotis_TS305_17_09_2019			Otocyon megalotis megalotis
+GCA_963574585.1	PGDP_OtoCra			Otolemur crassicaudatus
+GCF_000181295.1	OtoGar3	NCBI Otolemur garnettii Annotation Release 102	2018-01-09	Otolemur garnettii
+GCA_006417275.1	ORB			Ourebia ourebi
+GCA_021462335.1	ASM2146233v1			Ovibos moschatus
+GCA_028583565.1	CAU_O.ammon polii_1.0	Annotation submitted by China Agricultural University	2023-02-10	Ovis ammon polii
+GCA_023701675.1	CAU_F1_maternal_1.0	Annotation submitted by China Agricultural University	2022-06-10	Ovis ammon polii x Ovis aries
+GCF_016772045.2	ARS-UI_Ramb_v3.0	GCF_016772045.2-RS_2023_10	2023-10-17	Ovis aries
+GCA_004026945.1	OviCan_v1_BIUU			Ovis canadensis
+GCA_903231385.1	OvNiv1.0			Ovis nivicola lydekkeri
+GCA_014523465.1	CAU_Oori_1.0			Ovis orientalis
+GCA_028658305.1	Pachyuromys_duprasi_HiC			Pachyuromys duprasi
+GCA_030068075.1	ASM3006807v1			Paguma larvata
+GCF_029289425.2	NHGRI_mPanPan1-v2.0_pri	GCF_029289425.2-RS_2024_02	2024-02-27	Pan paniscus
+GCF_028858775.2	NHGRI_mPanTro3-v2.0_pri	GCF_028858775.2-RS_2024_02	2024-02-27	Pan troglodytes
+GCF_018350215.1	P.leo_Ple1_pat1.1	NCBI Panthera leo Annotation Release 100	2021-08-06	Panthera leo
+GCF_028533385.1	Panthera_onca_HiC	GCF_028533385.1-RS_2023_10	2023-10-19	Panthera onca
+GCF_024362965.1	ASM2436296v1	GCF_024362965.1-RS_2023_02	2023-02-22	Panthera pardus
+GCF_018350195.1	P.tigris_Pti1_mat1.1	NCBI Panthera tigris Annotation Release 102	2021-08-10	Panthera tigris
+GCF_023721935.1	Puncia_PCG_1.0	GCF_023721935.1-RS_2023_02	2023-02-27	Panthera uncia
+GCA_040182635.1	NWIPB_Pahodg_1.0			Pantholops hodgsonii
+GCF_008728515.1	Panubis1.0	NCBI Papio anubis Annotation Release 104	2019-10-15	Papio anubis
+GCA_008728515.2	Panubis1.1			Papio anubis
+GCA_963574715.1	PGDP_PapCyn			Papio cynocephalus
+GCA_023781915.1	ASM2378191v1			Papio hamadryas
+GCA_963573405.1	PGDP_PapKin			Papio kindae
+GCA_028645565.1	Papio_papio_HiC			Papio papio
+GCA_963574515.1	PGDP_PapUrs			Papio ursinus
+GCA_004024585.1	ParHer_v1_BIUU			Paradoxurus hermaphroditus
+GCA_007922755.1	PedCap_v1_BIUU			Pedetes capensis
+GCA_963574655.1	PGDP_PerPot			Perodicticus potto
+GCF_023159225.1	ASM2315922v1	NCBI Perognathus longimembris pacificus Annotation Release 100	2022-05-11	Perognathus longimembris pacificus
+GCA_902168425.1	Patt_10x_v1			Peromyscus attwateri
+GCA_902168405.1	Pazt_10x_v1			Peromyscus aztecus
+GCF_007827085.1	ASM782708v3	GCF_007827085.1-RS_2023_02	2023-02-24	Peromyscus californicus insignis
+GCF_949786415.1	PerEre_H2_v1	GCF_949786415.1-RS_2023_08	2023-08-26	Peromyscus eremicus
+GCF_004664715.2	UCI_PerLeu_2.1	NCBI Peromyscus leucopus Annotation Release 101	2020-10-29	Peromyscus leucopus
+GCF_003704035.1	HU_Pman_2.1.3	NCBI Peromyscus maniculatus bairdii Annotation Release 102	2021-06-28	Peromyscus maniculatus bairdii
+GCA_902168415.1	Pmel_10x_v1			Peromyscus melanophrys
+GCA_902168325.1	Pnud_10x_v1			Peromyscus nudipes
+GCA_003704135.2	HU_Ppol_1.3.3			Peromyscus polionotus subgriseus
+GCA_028583685.1	PetGlider_PUasm1.0			Petaurus breviceps papuanus
+GCA_004026965.1	PetTyp_v1_BIUU			Petromus typicus
+GCF_016906955.1	ROS_Pafr_v1	GCF_016906955.1-RS_2023_03	2023-03-03	Phacochoerus africanus
+GCA_028646595.1	pg-2k			Phalanger gymnotis
+GCF_002099425.1	phaCin_unsw_v4.1	NCBI Phascolarctos cinereus Annotation Release 100	2017-04-24	Phascolarctos cinereus
+GCA_032200785.1	ASM3220078v1			Phataginus tetradactyla
+GCA_029783875.1	UCLA_PhaTri_1.0			Phataginus tricuspis
+GCA_006410695.1	MXD			Philantomba maxwellii
+GCF_004348235.1	GSC_HSeal_1.0	NCBI Phoca vitulina Annotation Release 100	2020-02-07	Phoca vitulina
+GCA_963924675.1	mPhoPho1.1			Phocoena phocoena
+GCF_008692025.1	mPhoSin1.pri	NCBI Phocoena sinus Annotation Release 100	2020-02-18	Phocoena sinus
+GCF_943737965.1	PHOROB	GCF_943737965.1-RS_2023_02	2023-02-26	Phodopus roborovskii
+GCA_030556225.1	Psun-UiT-1			Phodopus sungorus
+GCF_004126475.2	mPhyDis1.pri.v3	NCBI Phyllostomus discolor Annotation Release 101	2020-08-31	Phyllostomus discolor
+GCF_019186645.2	TTU_PhHast_1.1	NCBI Phyllostomus hastatus Annotation Release 100	2022-01-11	Phyllostomus hastatus
+GCA_033318265.1	ASM3331826v1			Phyllotis vaccarum
+GCF_002837175.3	ASM283717v5	GCF_002837175.3-RS_2023_04	2023-04-05	Physeter catodon
+GCA_963574265.1	PGDP_PilBad			Piliocolobus badius
+GCA_963574285.1	PGDP_PilGor			Piliocolobus gordonorum
+GCA_963574805.1	PGDP_PilKir			Piliocolobus kirkii
+GCF_002776525.5	ASM277652v5	NCBI Piliocolobus tephrosceles Annotation Release 102	2019-12-30	Piliocolobus tephrosceles
+GCF_014108245.1	mPipKuh1.p	NCBI Pipistrellus kuhlii Annotation Release 101	2021-12-14	Pipistrellus kuhlii
+GCA_963693515.1	mPipNat.pri	Annotation submitted by Leibniz Institute for Zoo and Wildlife Research	2024-02-06	Pipistrellus nathusii
+GCA_903992545.1	mPipPip1.1			Pipistrellus pipistrellus
+GCA_949987585.1	mPipPyg2.1			Pipistrellus pygmaeus
+GCA_963573695.1	PGDP_PitAlb			Pithecia albicans
+GCA_963574905.1	PGDP_PitChr			Pithecia chrysocephala
+GCA_963573645.1	PGDP_PitHir			Pithecia hirsuta
+GCA_963574975.1	PGDP_PitMit			Pithecia mittermeieri
+GCA_963575305.1	PGDP_PitPis			Pithecia pissinatti
+GCA_023779675.1	ASM2377967v1			Pithecia pithecia
+GCA_963574005.1	PGDP_PitVan			Pithecia vanzolinii
+GCA_017311385.1	HRRL_Platanista_gangetica_1.0			Platanista gangetica
+GCA_004363435.1	PlaMin_v1_BIUU			Platanista minor
+GCA_963455305.1	mPleAur1.1			Plecotus auritus
+GCA_963574705.1	PGDP_PleBer			Plecturocebus bernhardi
+GCA_963573885.1	PGDP_PleBru			Plecturocebus brunneus
+GCA_963575255.1	PGDP_PleCal			Plecturocebus caligatus
+GCA_963573415.1	PGDP_PleCin			Plecturocebus cinerascens
+GCA_963574565.1	PGDP_PleCup			Plecturocebus cupreus
+GCA_004027715.1	CalDon_v1_BIUU			Plecturocebus donacophilus
+GCA_963575235.1	PGDP_PleDub			Plecturocebus dubius
+GCA_963574625.1	PGDP_PleGro			Plecturocebus grovesi
+GCA_963575245.1	PGDP_PleHof			Plecturocebus hoffmannsi
+GCA_963575275.1	PGDP_PleMil			Plecturocebus miltoni
+GCA_963574105.1	PGDP_PleMol			Plecturocebus moloch
+GCF_028885655.2	NHGRI_mPonAbe1-v2.0_pri	GCF_028885655.2-RS_2024_02	2024-02-27	Pongo abelii
+GCF_028885625.2	NHGRI_mPonPyg2-v2.0_pri	GCF_028885625.2-RS_2024_02	2024-02-27	Pongo pygmaeus
+GCA_011754075.1	ASM1175407v1	Annotation submitted by Universidade do Vale do Itajai (UNIVALI)	2020-03-25	Pontoporia blainvillei
+GCA_028658325.1	Potorous_gilbertii_HiC			Potorous gilbertii
+GCA_028534135.1	Potos_flavus_HiC			Potos flavus
+GCA_019843815.1	ASM1984381v1			Praomys delectorum
+GCA_963573905.1	PGDP_PreCom			Presbytis comata
+GCA_963575215.1	PGDP_PreMit			Presbytis melalophos mitrata
+GCF_016509475.1	Fcat_Pben_1.1_paternal_pri	NCBI Prionailurus bengalensis Annotation Release 100	2021-08-30	Prionailurus bengalensis
+GCA_018403415.1	P_iriomotensis_scaffold_01			Prionailurus iriomotensis
+GCF_022837055.1	UM_Priviv_1.0	GCF_022837055.1-RS_2023_03	2023-03-03	Prionailurus viverrinus
+GCA_006410515.1	PLG			Procapra przewalskii
+GCA_000152225.2	Pcap_2.0			Procavia capensis
+GCA_028646535.1	pl-1k			Procyon lotor
+GCA_003258685.1	Prosim_1.0			Prolemur simus
+GCF_000956105.1	Pcoq_1.0	NCBI Propithecus coquereli Annotation Release 100	2015-05-27	Propithecus coquereli
+GCA_963574665.1	PGDP_ProCor			Propithecus deckenii coronatus
+GCA_963575075.1	PGDP_ProDia			Propithecus diadema
+GCA_963575085.1	PGDP_ProEdw			Propithecus edwardsi
+GCA_963574695.1	PGDP_ProPer			Propithecus perrieri
+GCA_963574315.1	PGDP_ProTat			Propithecus tattersalli
+GCA_963575125.1	PGDP_ProVer			Propithecus verreauxi
+GCA_017311185.1	Proteles_cristatus_TS307_19_07_2019			Proteles cristata cristata
+GCF_907164565.1	mPsaObe1.curated_primary_1811	GCF_907164565.1-RS_2023_04	2023-04-24	Psammomys obesus
+GCA_028646575.1	Pseudocheirus_occidentalis_HiC			Pseudocheirus occidentalis
+GCA_028646515.1	Pseudochirops_corinnae_HiC			Pseudochirops corinnae
+GCA_028627135.1	Pseudochirops_cupreus_HiC			Pseudochirops cupreus
+GCA_003182575.1	ASM318257v1			Pseudois nayaur
+GCA_039906525.1	mPseCra1.hap2			Pseudorca crassidens
+GCF_021234165.1	CSHL_Meso_final	GCF_021234165.1-RS_2024_03	2024-03-28	Pteronotus mesoamericanus
+GCA_036768555.1	ASM3676855v1			Pteronotus parnellii mexicanus
+GCA_004024605.1	PteBra_v1_BIUU			Pteronura brasiliensis
+GCF_000325575.1	ASM32557v1	NCBI Pteropus alecto Annotation Release 102	2018-05-02	Pteropus alecto
+GCF_902729225.1	Ma_sr-lr_union100	NCBI Pteropus giganteus Annotation Release 100	2021-02-19	Pteropus giganteus
+GCA_014363405.1	P_pselaphon_scaffold_01			Pteropus pselaphon
+GCA_028533765.1	Pteropus_rufus_HiC			Pteropus rufus
+GCF_000151845.1	Pvam_2.0	NCBI Pteropus vampyrus Annotation Release 101	2018-01-05	Pteropus vampyrus
+GCF_003327715.1	PumCon1.0	NCBI Puma concolor Annotation Release 100	2018-07-24	Puma concolor
+GCF_014898765.1	PumYag	NCBI Puma yagouaroundi Annotation Release 100	2021-03-26	Puma yagouaroundi
+GCA_947044825.1	Saimaa ringed seal draft genome			Pusa hispida saimensis
+GCA_028975605.1	PSIB_hic			Pusa sibirica
+GCA_963574085.1	PGDP_PygCin			Pygathrix cinerea
+GCA_004024825.1	PygNem_v1_BIUU			Pygathrix nemaeus
+GCA_023764695.1	ASM2376469v1			Pygathrix nigripes
+GCA_949782905.1	mRanTar1.h1.1	Annotation submitted by EBP Norway	2023-04-16	Rangifer tarandus platyrhynchus
+GCA_006410735.1	SNB			Raphicerus campestris
+GCF_036323735.1	GRCr8	GCF_036323735.1-RS_2024_02	2024-02-09	Rattus norvegicus
+GCF_011064425.1	Rrattus_CSIRO_v1	NCBI Rattus rattus Annotation Release 100	2020-03-13	Rattus rattus
+GCA_006410935.1	BHR			Redunca redunca
+GCA_019844195.1	ASM1984419v1			Rhabdomys dilectus
+GCA_030674055.1	PU_Rpum_1.0			Rhabdomys pumilio
+GCA_028646465.1	Rhinoceros_unicornis_HiC			Rhinoceros unicornis
+GCA_040057535.1	ASM4005753v1			Rhinolophus affinis
+GCF_004115265.2	mRhiFer1_v1.p	GCF_004115265.2-RS_2023_02	2023-02-27	Rhinolophus ferrumequinum
+GCF_001698545.2	ASM169854v2	NCBI Rhinopithecus bieti Annotation Release 100	2021-05-24	Rhinopithecus bieti
+GCF_007565055.1	ASM756505v1	NCBI Rhinopithecus roxellana Annotation Release 101	2019-09-16	Rhinopithecus roxellana
+GCA_023764705.1	ASM2376470v1			Rhinopithecus strykeri
+GCA_009823505.1	RhiPru_1.0			Rhizomys pruinosus
+GCA_010120015.1	ASM1012001v1			Rhombomys opimus
+GCA_019843965.1	ASM1984396v1			Rhynchomys soricoides
+GCA_037038555.1	mRhyNas2.hap2			Rhynchonycteris naso
+GCF_014176215.1	mRouAeg1.p	NCBI Rousettus aegyptiacus Annotation Release 101	2020-09-25	Rousettus aegyptiacus
+GCA_015472975.1	rouLes_1.0			Rousettus leschenaultii
+GCA_028533395.1	Rousettus_madagascariensis_HiC			Rousettus madagascariensis
+GCA_034233915.1	ASM3423391v1			Rucervus eldii siamensis
+GCA_963981305.1	mRupRup1.1			Rupicapra rupicapra
+GCA_038501445.1	RusAlf_1.1			Rusa alfredi
+GCA_036850765.1	mSacBil1_pri_phased_curated			Saccopteryx bilineata
+GCA_036850995.1	mSacLep1_pri_phased_curated			Saccopteryx leptura
+GCA_963574455.1	PGDP_SagBic			Saguinus bicolor
+GCA_963574215.1	PGDP_SagGeo			Saguinus geoffroyi
+GCA_004024885.1	SagImp_v1_BIUU			Saguinus imperator
+GCA_963574735.1	PGDP_SagInu			Saguinus inustus
+GCA_963575005.1	PGDP_SagLab			Saguinus labiatus
+GCA_021498475.1	ASM2149847v1			Saguinus midas
+GCA_963574345.1	PGDP_SagMys			Saguinus mystax
+GCA_031835075.1	ASM3183507v1	Annotation submitted by The Ohio State University	2023-09-25	Saguinus oedipus
+GCA_004024985.1	SaiTat_v1_BIUU			Saiga tatarica
+GCF_016699345.2	BCM_Sbol_2.1	NCBI Saimiri boliviensis Annotation Release 102	2021-02-12	Saimiri boliviensis boliviensis
+GCA_963573395.1	PGDP_SaiCas			Saimiri cassiquiarensis
+GCA_963573505.1	PGDP_SaiMac			Saimiri macrodon
+GCA_963574195.1	PGDP_SaiOer			Saimiri oerstedii
+GCA_963573345.1	PGDP_SaiSci			Saimiri sciureus
+GCA_963574015.1	PGDP_SaiUst			Saimiri ustus
+GCF_009761245.1	GSC_monkey_1.0	NCBI Sapajus apella Annotation Release 100	2020-01-09	Sapajus apella
+GCF_902635505.1	mSarHar1.11	NCBI Sarcophilus harrisii Annotation Release 103	2019-12-20	Sarcophilus harrisii
+GCA_004024925.1	ScaAqu_v1_BIUU			Scalopus aquaticus
+GCF_902686445.1	mSciCar1.2	GCF_902686445.1-RS_2023_03	2023-03-03	Sciurus carolinensis
+GCA_020740815.1	VCOM_Snig_1.0			Sciurus niger
+GCA_902686455.2	mSciVul1.2			Sciurus vulgaris
+GCA_004025065.1	SemEnt_v1_BIUU			Semnopithecus entellus
+GCA_963573665.1	PGDP_SemHyp			Semnopithecus hypoleucos
+GCA_963574295.1	PGDP_SemPri			Semnopithecus priam
+GCA_963574385.1	PGDP_SemSch			Semnopithecus schistaceus
+GCA_004025045.1	SigHis_v1_BIUU			Sigmodon hispidus
+GCA_032199065.1	SGIG_CAM011_5_02_2020	Annotation submitted by Universite Toulouse III - Paul Sabatier	2023-09-29	Smutsia gigantea
+GCA_032201145.1	ASM3220114v1			Smutsia temminckii
+GCA_004363575.1	SolPar_v1_BIUU			Solenodon paradoxus
+GCF_027595985.1	mSorAra2.pri	GCF_027595985.1-RS_2023_04	2023-04-12	Sorex araneus
+GCF_029834395.1	SorFum_2.1	GCF_029834395.1-RS_2023_10	2023-10-04	Sorex fumeus
+GCA_030324115.1	SorMar_1.0			Sorex maritimensis
+GCA_028565675.1	ASM2856567v1			Sorex palustris
+GCA_007760645.1	ASM776064v1			Sousa chinensis
+GCA_023170115.1	Speothos_venaticus_v01			Speothos venaticus
+GCA_002406435.1	ASM240643v1			Spermophilus dauricus
+GCA_004023965.1	SpiGra_v1_BIUU			Spilogale gracilis
+GCA_023159085.1	UWYO_SpInte_0.1			Spilogale interrupta
+GCA_951394435.1	mSteCoe1.1			Stenella coeruleoalba
+GCA_028646385.1	Steno_bredanensis_HiC			Steno bredanensis
+GCF_014824575.3	WHU_Shon_v2.1	NCBI Sturnira hondurensis Updated Annotation Release 100.20210611	2021-06-15	Sturnira hondurensis
+GCA_014824575.3	ASM1482457v3			Sturnira hondurensis
+GCF_024139225.1	mSunEtr1.pri.cur	GCF_024139225.1-RS_2023_02	2023-02-26	Suncus etruscus
+GCF_006229205.1	meerkat_22Aug2017_6uvM2_HiC	NCBI Suricata suricatta Annotation Release 100	2019-07-11	Suricata suricatta
+GCA_905335845.1	Sus_cebifrons.v1			Sus cebifrons
+GCF_000003025.6	Sscrofa11.1	NCBI Sus scrofa Annotation Release 106	2017-05-03	Sus scrofa
+GCA_006408735.1	CMD			Sylvicapra grimmia
+GCA_015711505.1	Sylvilagus_bachmani_HiC			Sylvilagus bachmani
+GCA_949820135.1	mSylFlo1.10			Sylvilagus floridanus
+GCF_028878055.2	NHGRI_mSymSyn1-v2.0_pri	GCF_028878055.2-RS_2024_02	2024-02-27	Symphalangus syndactylus
+GCA_902825105.1	synceruscaffer			Syncerus caffer
+GCF_015852505.1	mTacAcu1.pri	NCBI Tachyglossus aculeatus Annotation Release 100	2020-12-28	Tachyglossus aculeatus
+GCA_030848825.1	DD_mTadBra1_pri			Tadarida brasiliensis
+GCF_014898055.3	MPIMG_talOcc4v2.1	GCF_014898055.3-RS_2023_03	2023-03-24	Talpa occidentalis
+GCA_023851605.1	mTamTet1.pri			Tamandua tetradactyla
+GCA_025594165.1	ASM2559416v1			Tamias sibiricus
+GCA_031878705.1	mTapInd1.hap2			Tapirus indicus
+GCA_004025025.1	TapTer_v1_BIUU			Tapirus terrestris
+GCA_963574405.1	PGDP_TarLar			Tarsius lariang
+GCA_963574415.1	PGDP_TarWal			Tarsius wallacei
+GCA_003697995.1	ASM369799v1			Taxidea taxus jeffersonii
+GCF_003255815.1	Tgel_1.0	NCBI Theropithecus gelada Annotation Release 100	2018-06-26	Theropithecus gelada
+GCA_040207635.1	ThBott			Thomomys bottae limpiae
+GCA_004025085.1	ThrSwi_v1_BIUU			Thryonomys swinderianus
+GCA_036184385.1	Tmue1			Tokudaia muenninki
+GCA_027943515.1	T_osimensis_1.0			Tokudaia osimensis
+GCA_036184795.1	Ttok1			Tokudaia tokunoshimensis
+GCA_026826555.1	mTolMat1			Tolypeutes matacus
+GCA_004024845.1	TonSau_v1_BIUU			Tonatia saurophila
+GCA_028533065.1	Trachops_cirrhosus_HiC			Trachops cirrhosus
+GCA_963574155.1	PGDP_TraAur			Trachypithecus auratus
+GCA_963574045.1	PGDP_TraCri			Trachypithecus cristatus
+GCF_009764315.1	Tfra_2.0	NCBI Trachypithecus francoisi Annotation Release 100	2020-03-23	Trachypithecus francoisi
+GCA_963573545.1	PGDP_TraGee			Trachypithecus geei
+GCA_963573455.1	PGDP_TraGer			Trachypithecus germaini
+GCA_963573355.1	PGDP_TraHat			Trachypithecus hatinhensis
+GCA_963574185.1	PGDP_SemJoh			Trachypithecus johnii
+GCA_963573585.1	PGDP_TraLao			Trachypithecus laotum
+GCA_963574075.1	PGDP_TraObs			Trachypithecus obscurus
+GCA_023762245.1	ASM2376224v1			Trachypithecus phayrei crepuscula
+GCA_963573805.1	PGDP_TraPil			Trachypithecus pileatus
+GCA_963573475.1	PGDP_TraLeu			Trachypithecus poliocephalus
+GCA_963574985.1	PGDP_SemVet			Trachypithecus vetulus
+GCA_006411685.1	MTN			Tragelaphus buxtoni
+GCA_935064755.1	mTraEur1.1			Tragelaphus eurycerus
+GCA_006410775.1	LEK			Tragelaphus imberbis
+GCA_006416875.1	CME			Tragelaphus oryx
+GCA_006410495.1	BUB			Tragelaphus scriptus
+GCA_006410795.1	GTK			Tragelaphus strepsiceros
+GCA_004024965.2	ASM402496v2			Tragulus javanicus
+GCA_022376925.1	ASM2237692v1			Tragulus kanchil
+GCA_028551375.1	Tremarctos_ornatus_HiC			Tremarctos ornatus
+GCF_000243295.1	TriManLat1.0	GCF_000243295.1-RS_2024_01	2024-01-26	Trichechus manatus latirostris
+GCF_011100635.1	mTriVul1.pri	NCBI Trichosurus vulpecula Annotation Release 100	2020-10-08	Trichosurus vulpecula
+GCA_000181375.1	ASM18137v1			Tupaia belangeri
+GCF_000334495.1	TupChi_1.0	NCBI Tupaia chinensis Annotation Release 102	2019-01-18	Tupaia chinensis
+GCA_026018925.1	mTupTan1			Tupaia tana
+GCA_003227395.1	ASM322739v1			Tursiops aduncus
+GCF_011762595.1	mTurTru1.mat.Y	NCBI Tursiops truncatus Annotation Release 102	2020-04-20	Tursiops truncatus
+GCA_002564285.1	Tym_barrerae_AO245_v1			Tympanoctomys barrerae
+GCA_023101885.1	KIZ_TCIN_v1.0			Typhlomys cinereus
+GCF_003426925.1	ASM342692v1	NCBI Urocitellus parryii Annotation Release 100	2018-09-07	Urocitellus parryii
+GCA_032313775.1	UCinereo1.0			Urocyon cinereoargenteus
+GCA_028551405.1	Uromys_caudimaculatus_HiC			Uromys caudimaculatus
+GCA_004024945.1	UroGra_v1_BIUU			Uropsilus gracilis
+GCF_020975775.1	gsc_jax_bbear_1.0	NCBI Ursus americanus Annotation Release 100	2022-01-10	Ursus americanus
+GCF_023065955.2	UrsArc2.0	GCF_023065955.2-RS_2023_06	2023-06-06	Ursus arctos
+GCF_017311325.1	ASM1731132v1	NCBI Ursus maritimus Annotation Release 101	2021-03-29	Ursus maritimus
+GCA_009660055.1	ASM966005v1			Ursus thibetanus thibetanus
+GCA_963573675.1	PGDP_VarRub			Varecia rubra
+GCA_028533085.1	Varecia_variegata_HiC			Varecia variegata
+GCA_963924515.1	mVesMur1.1			Vespertilio murinus
+GCF_000164845.4	VicPac3.2	NCBI Vicugna pacos Annotation Release 102	2021-05-24	Vicugna pacos
+GCA_013265495.1	ASM1326549v1			Vicugna vicugna mensalis
+GCF_900497805.2	bare-nosed wombat genome assembly	NCBI Vombatus ursinus Annotation Release 100	2019-01-18	Vombatus ursinus
+GCA_030463245.1	zhanglab2022			Vulpes corsac
+GCA_024500485.1	ASM2450048v1			Vulpes ferrilata
+GCF_018345385.1	ASM1834538v1	NCBI Vulpes lagopus Annotation Release 100	2021-05-19	Vulpes lagopus
+GCF_003160815.1	VulVul2.2	NCBI Vulpes vulpes Annotation Release 100	2018-07-26	Vulpes vulpes
+GCA_004024805.1	XerIna_v1_BIUU			Xerus inauris
+GCA_028644305.1	Xerus_rutilus_HiC			Xerus rutilus
+GCF_009762305.2	mZalCal1.pri.v2	NCBI Zalophus californianus Annotation Release 101	2020-07-29	Zalophus californianus
+GCA_004024765.1	ZapHud_v1_BIUU			Zapus hudsonius
+GCA_004364475.1	ZipCav_v1_BIUU			Ziphius cavirostris

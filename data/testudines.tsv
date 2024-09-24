@@ -1,0 +1,40 @@
+Assembly Accession	Assembly Name	Annotation Name	Annotation Release Date	Organism Name
+GCA_022086475.1	rActMar1.p			Actinemys marmorata
+GCA_023634205.1	rActPal1.0.p			Actinemys pallida
+GCA_026122505.1	AldGig_1.0			Aldabrachelys gigantea
+GCA_030068395.1	ASM3006839v1			Apalone spinifera
+GCF_023653815.1	GSC_CCare_1.0	NCBI Caretta caretta Annotation Release 100	2022-06-29	Caretta caretta
+GCA_033958435.1	ASM3395843v1			Carettochelys insculpta
+GCF_015237465.2	rCheMyd1.pri.v2	NCBI Chelonia mydas Annotation Release 103	2021-09-02	Chelonia mydas
+GCF_003597395.1	ASM359739v1	NCBI Chelonoidis abingdonii Annotation Release 100	2020-03-11	Chelonoidis abingdonii
+GCA_037349315.1	rCheSer1_p1.0			Chelydra serpentina
+GCF_011386835.1	ASM1138683v2	GCF_011386835.1-RS_2024_05	2024-05-29	Chrysemys picta bellii
+GCA_040208395.1	rCleGut1_p1.0			Clemmys guttata
+GCA_004028625.2	ASM402862v2			Cuora amboinensis
+GCA_003846335.1	ASM384633v1			Cuora mccordi
+GCA_007922305.1	Dermatemys_mawii-1.0			Dermatemys mawii
+GCF_009764565.3	rDerCor1.pri.v4	NCBI Dermochelys coriacea Annotation Release 101	2021-09-02	Dermochelys coriacea
+GCA_036785055.1	rEmyBla1_p1.0			Emydoidea blandingii
+GCA_026122565.1	APGP_CSIRO_Emac_v1			Emydura macquarii macquarii
+GCA_007922225.1	Emydura_subglobosa-1.0			Emydura subglobosa
+GCF_028017835.1	rEmyOrb1.hap1	GCF_028017835.1-RS_2024_05	2024-05-09	Emys orbicularis
+GCA_030012505.1	ASM3001250v1			Eretmochelys imbricata
+GCA_032172135.1	rGlyIns1_p1.0			Glyptemys insculpta
+GCA_002896415.1	ASM289641v1			Gopherus agassizii
+GCF_007399415.2	rGopEvg1_v1.p	NCBI Gopherus evgoodei Annotation Release 100	2019-08-16	Gopherus evgoodei
+GCF_025201925.1	rGopFla2.mat.asm	GCF_025201925.1-RS_2023_02	2023-02-26	Gopherus flavomarginatus
+GCA_037349215.1	rGraGeo1_p1.0			Graptemys geographica
+GCA_033296515.1	rMacSuw1.hap1			Macrochelys suwanniensis
+GCF_027887155.1	rMalTer1.hap1	GCF_027887155.1-RS_2023_03	2023-03-02	Malaclemys terrapin pileata
+GCF_020497125.1	ASM2049712v1	NCBI Mauremys mutica Annotation Release 100	2021-11-03	Mauremys mutica
+GCF_016161935.1	ASM1616193v1	NCBI Mauremys reevesii Annotation Release 100	2021-02-03	Mauremys reevesii
+GCA_007922155.1	Mesoclemmys_tuberculata-1.0			Mesoclemmys tuberculata
+GCA_032595735.1	ASM3259573v1			Pelochelys cantorii
+GCF_000230535.1	PelSin_1.0	NCBI Pelodiscus sinensis Annotation Release 102	2018-05-25	Pelodiscus sinensis
+GCA_007922175.1	Pelusios_castaneus-1.0			Pelusios castaneus
+GCA_003942145.1	ASM394214v1	Annotation submitted by Institute of Zoology,  Guangdong Academy of Sciences	2021-01-07	Platysternon megacephalum
+GCA_007922195.1	Podocnemis_expansa-1.0			Podocnemis expansa
+GCA_019425775.1	ASM1942577v1			Rafetus swinhoei
+GCA_032164245.1	rSteOdo2_p1.0			Sternotherus odoratus
+GCF_002925995.2	T_m_triunguis-2.0	NCBI Terrapene carolina triunguis Annotation Release 102	2019-07-09	Terrapene triunguis
+GCF_013100865.1	CAS_Tse_1.0	NCBI Trachemys scripta elegans Annotation Release 100	2020-05-27	Trachemys scripta elegans

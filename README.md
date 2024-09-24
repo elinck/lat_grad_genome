@@ -1,44 +1,20 @@
-## A latitidunal gradient of reference genomes?
 
-We first downloaded metadata for all avian referemce genomes on the NCBI databases using  NCBI Datasets command-line tools:
+This archive includes data and code from Linck & Cadena In press, *Molecular Ecology*.  
 
-```
-datasets summary genome taxon aves --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > birds.tsv
-```
+### Files:
 
-We'll repeat this for mammals: 
+`*.tsv`: Metadata for available reference genomes from NCBI's Genome Browser.
 
-```
-datasets summary genome taxon mammalia --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > mammals.tsv
-```
+`*.zip`: Zipped GBIF occurence datasets (DOIs for each are referenced in the manuscript) for different taxonomic groups and species lists. 
 
-...and for squamates:
+`congen_lit_review.csv`: A comma-delimited table of summarizing the study's literature review. 
 
-```
-datasets summary genome taxon squamata --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > squamates.tsv
-```
+### Scripts: 
 
-...amphibians:
+`01_analysis.Rmd`: Rmarkdown notebook to run all analyses and produce Figure 1. 
 
-```
-datasets summary genome taxon amphibia --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > amphibia.tsv
-```
+`ncbi.md`: Shell commands to download metadata associated with reference genomes from NCBI's command-line tools (generates up-to-date versions of all `.tsv` files). 
 
+### Instructions:
 
-...turtles: 
-
-```
-datasets summary genome taxon testudine --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > testudines.tsv
-```
-
-...crocodiles: 
-
-```
-datasets summary genome taxon crocodylia --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > crocodylia.tsv
-```
-
-...and tuataras: 
-
-```
-datasets summary genome taxon tuatara --reference --as-json-lines | dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name > tuatara.tsv
-```
+To replicate analyses in Linck & Cadena, download the contents of the archive and place in a local directory titled `lat_grad_genome`. Within this folder, create a second directory titled `data`, and place all `.tsv`, `.csv`, and `.zip` files within it. Knit `01_analysis.Rmd`. 

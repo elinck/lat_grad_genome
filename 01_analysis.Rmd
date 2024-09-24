@@ -25,7 +25,7 @@ library(segmented)
 Let's assign our data directory:
 
 ```{r, warning=FALSE, message=FALSE}
-data_dir <- "~/Dropbox/lat_grad_genome/data"
+data_dir <- "lat_grad_genome/data"
 ```
 
 We'll start by extracting a list of species names from our NCBI download (see README.md for details):
@@ -33,37 +33,37 @@ We'll start by extracting a list of species names from our NCBI download (see RE
 ```{r, warning=FALSE, message=FALSE}
 f_birds <- file.path(data_dir, "birds.tsv")
 birds <- read_tsv(f_birds) %>% 
-  select("Organism Name") %>% 
+  dplyr::select("Organism Name") %>% 
   rename('name'= 'Organism Name')
 
 f_mammals <- file.path(data_dir, "mammals.tsv")
 mammals <- read_tsv(f_mammals) %>% 
-  select("Organism Name") %>% 
+  dplyr::select("Organism Name") %>% 
   rename('name'= 'Organism Name')
 
 f_squamates <- file.path(data_dir, "squamates.tsv")
 squamates <- read_tsv(f_squamates) %>% 
-  select("Organism Name") %>% 
+  dplyr::select("Organism Name") %>% 
   rename('name'= 'Organism Name')
 
 f_amphibians <- file.path(data_dir, "amphibia.tsv")
 amphibians <- read_tsv(f_amphibians) %>% 
-  select("Organism Name") %>% 
+  dplyr::select("Organism Name") %>% 
   rename('name'= 'Organism Name')
 
 f_turtles <- file.path(data_dir, "testudines.tsv")
 turtles <- read_tsv(f_turtles) %>% 
-  select("Organism Name") %>% 
+  dplyr::select("Organism Name") %>% 
   rename('name'= 'Organism Name')
 
 f_crocodiles <- file.path(data_dir, "crocodylia.tsv")
 crocodiles <- read_tsv(f_crocodiles) %>% 
-  select("Organism Name") %>% 
+  dplyr::select("Organism Name") %>% 
   rename('name'= 'Organism Name')
 
 f_tuatara <- file.path(data_dir, "tuatara.tsv")
 tuatara <- read_tsv(f_tuatara) %>% 
-  select("Organism Name") %>% 
+  dplyr::select("Organism Name") %>% 
   rename('name'= 'Organism Name')
 
 species <- bind_rows(birds, mammals, squamates, amphibians, turtles, crocodiles, tuatara, .id = "dataset")
@@ -81,7 +81,7 @@ Next we'll link NCBI species names with their associated GBIF usageKey, using on
 ```{r, warning=FALSE, message=FALSE}
 taxon_id <- name_backbone_checklist(name_data=species) %>%
   filter(matchType=='EXACT') %>% 
-  select(usageKey) %>%
+  dplyr::select(usageKey) %>%
   as_vector() 
 ```
 
@@ -102,6 +102,7 @@ if (file.exists(f_occ_data)) {
   format = "SIMPLE_CSV"
   )
 }
+gbif_citation('0085284-240506114902167')
 ```
 
 As a point of comparison, we'll do the same for the full set of GBIF records in all seven groups. Here are birds: 
@@ -121,6 +122,7 @@ if (file.exists(f_occ_data_birds)) {
   format = "SIMPLE_CSV"
   )
 }
+gbif_citation('0071470-240506114902167')
 ```
 Mammals: 
 
@@ -139,6 +141,7 @@ if (file.exists(f_occ_data_mammals)) {
   format = "SIMPLE_CSV"
   )
 }
+gbif_citation('0083708-240506114902167')
 ```
 Squamates: 
 
@@ -157,6 +160,7 @@ if (file.exists(f_occ_data_squamates)) {
   format = "SIMPLE_CSV"
   )
 }
+gbif_citation('0083881-240506114902167')
 ```
 
 Amphibians: 
@@ -176,6 +180,7 @@ if (file.exists(f_occ_data_amphibians)) {
   format = "SIMPLE_CSV"
   )
 }
+gbif_citation('0085162-240506114902167')
 ```
 
 Turtles: 
@@ -195,6 +200,7 @@ if (file.exists(f_occ_data_turtles)) {
   format = "SIMPLE_CSV"
   )
 }
+gbif_citation('0013376-240626123714530')
 ```
 
 Crocodiles: 
@@ -214,6 +220,7 @@ if (file.exists(f_occ_data_crocodiles)) {
   format = "SIMPLE_CSV"
   )
 }
+gbif_citation('0013380-240626123714530')
 ```
 
 ...Tuataras:
@@ -233,6 +240,7 @@ if (file.exists(f_occ_data_tuataras)) {
   format = "SIMPLE_CSV"
   )
 }
+gbif_citation('0013381-240626123714530')
 ```
 
 This data set includes higher-level taxonomic categories, so we'll filter it down to species alone, and then calculate the total number in the dataset: 
@@ -242,31 +250,41 @@ k$recordNumber <- as.character(k$recordNumber) # dealing with error message
 species_all <- bind_rows(e, f, g, h, i, j, k, .id = "dataset")
 species_all$dataset <- fct_recode(species_all$dataset, "birds" = "1", "mammals" = "2", "squamates" = "3", "amphibians" = "4", "turtles" = "5", "crocodiles" = "6", "tuatara" = "7")
 species_all <- species_all %>% filter(taxonRank=="SPECIES")
+species_sampled <- d %>% filter(taxonRank=="SPECIES")
 species_all$species %>% unique() %>% length()
+species_sampled$species %>% unique() %>% length()
 ```
 
 Decent! Let's break these numbers down a bit:
 
 ```{r, warning=FALSE, message=FALSE}
-species_all %>% filter(dataset=="birds") %>% select(species) %>% unique() %>% nrow()
-species_all %>% filter(dataset=="mammals") %>% select(species) %>% unique() %>% nrow()
-species_all %>% filter(dataset=="squamates") %>% select(species) %>% unique() %>% nrow()
-species_all %>% filter(dataset=="amphibians") %>% select(species) %>% unique() %>% nrow()
-species_all %>% filter(dataset=="turtles") %>% select(species) %>% unique() %>% nrow()
-species_all %>% filter(dataset=="crocodiles") %>% select(species) %>% unique() %>% nrow()
-species_all %>% filter(dataset=="tuatara") %>% select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="birds") %>% dplyr::select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="mammals") %>% dplyr::select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="squamates") %>% dplyr::select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="amphibians") %>% dplyr::select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="turtles") %>% dplyr::select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="crocodiles") %>% dplyr::select(species) %>% unique() %>% nrow()
+species_all %>% filter(dataset=="tuatara") %>% dplyr::select(species) %>% unique() %>% nrow()
 ```
 
 Two tuataras is suspicious—turns out one is a fossil. Let's exclude it:
 
 ```{r}
-#species_all %>% filter(species != "Homoeosaurus maximiliani") %>% unique() %>% nrow()
+species_all <- species_all[!species_all$species=="Homoeosaurus maximiliani",]
 ```
+
+How many records for each category?
+
+```{r}
+table(species_all$dataset)
+table(species_all$dataset) %>% as.vector() %>% sum()
+```
+
 Next, we'll filter both datasets and produce multipoint sf objects for plotting and computation of species richness. We'll also want to filter these data down to the species with a sufficient number of observations (arbitrarily chosen as 10): 
 
 ```{r, warning=FALSE, message=FALSE}
 # reference genome species list
-d_filtered <- d %>% select(species, decimalLongitude, decimalLatitude) %>%
+d_filtered <- d %>% dplyr::select(species, decimalLongitude, decimalLatitude) %>%
   na.omit() %>%
   group_by(species) %>%
   filter(n() > 10)
@@ -277,7 +295,7 @@ d_sf$species %>% unique() %>% length()
 
 
 # all species
-e_filtered <- species_all %>% select(species, decimalLongitude, decimalLatitude) %>%
+e_filtered <- species_all %>% dplyr::select(species, decimalLongitude, decimalLatitude) %>%
   na.omit() %>%
   group_by(species) %>%
   filter(n() > 10)
@@ -381,7 +399,7 @@ Let's also plot the regions where there is the greatest difference between the r
 
 ```{r, warning=FALSE, message=FALSE}
 richness_diff_hulls <- richness_grid_hulls_d %>% 
-  select(cellid, num_species, geometry) %>% 
+  dplyr::select(cellid, num_species, geometry) %>% 
   mutate(difference = (richness_grid_hulls_e$std_richness-richness_grid_hulls_d$std_richness)) %>%
   mutate(std_difference = scale(difference)) %>% 
   mutate(proportion_richness = 1-(richness_grid_hulls_d$num_species)/(richness_grid_hulls_e$num_species))
@@ -517,11 +535,6 @@ dev.off()
 
 ```
 
-Let's try a more
-
-
-
-
 Lastly, let's create a table summarizing the key findings of out literature review:
 
 ```{r, warning=FALSE, message=FALSE}
@@ -534,7 +547,7 @@ This is the proportion of studies that use Sanger Sequencing with a first or las
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South") %>%
+  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both" | `Global South Middle Author?`=="Yes") %>%
   filter(`Sequencing Method`=="Sanger Sequencing") %>% nrow()
 n_part
 n_part/n_study
@@ -544,7 +557,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>%
+  filter((`First Author Origin`=="Global North" & `Senior Author Origin`=="Global North") & (`Global South Middle Author?`=="No" | `Global South Middle Author?`=="N/A")) %>%
   filter(`Sequencing Method`=="Sanger Sequencing") %>% nrow()
 n_part
 n_part/n_study
@@ -554,7 +567,7 @@ Here is the same comparison for microsatellites:
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South") %>%
+  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both" | `Global South Middle Author?`=="Yes") %>%
   filter(`Sequencing Method`=="Microsatellites") %>% nrow()
 n_part
 n_part/n_study
@@ -562,7 +575,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>%
+  filter((`First Author Origin`=="Global North" & `Senior Author Origin`=="Global North") & (`Global South Middle Author?`=="No" | `Global South Middle Author?`=="N/A")) %>%
   filter(`Sequencing Method`=="Microsatellites") %>% nrow()
 n_part
 n_part/n_study
@@ -572,7 +585,7 @@ And for reduced representation approaches:
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South") %>%
+  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both" | `Global South Middle Author?`=="Yes") %>%
   filter(`Sequencing Method`=="Reduced Representation") %>% nrow()
 n_part
 n_part/n_study
@@ -580,7 +593,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>%
+  filter((`First Author Origin`=="Global North" & `Senior Author Origin`=="Global North") & (`Global South Middle Author?`=="No" | `Global South Middle Author?`=="N/A")) %>%
   filter(`Sequencing Method`=="Reduced Representation") %>% nrow()
 n_part
 n_part/n_study
@@ -590,7 +603,7 @@ For WGS:
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South") %>%
+  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both" | `Global South Middle Author?`=="Yes") %>%
   filter(`Sequencing Method`=="WGS") %>% nrow()
 n_part
 n_part/n_study
@@ -598,7 +611,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>%
+  filter((`First Author Origin`=="Global North" & `Senior Author Origin`=="Global North") & (`Global South Middle Author?`=="No" | `Global South Middle Author?`=="N/A")) %>%
   filter(`Sequencing Method`=="WGS") %>% nrow()
 n_part
 n_part/n_study
@@ -606,10 +619,9 @@ n_part/n_study
 
 ...and "Other":
 
-
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South") %>%
+  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both" | `Global South Middle Author?`=="Yes") %>%
   filter(`Sequencing Method`=="Other") %>% nrow()
 n_part
 n_part/n_study
@@ -617,7 +629,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>%
+  filter((`First Author Origin`=="Global North" & `Senior Author Origin`=="Global North") & (`Global South Middle Author?`=="No" | `Global South Middle Author?`=="N/A")) %>%
   filter(`Sequencing Method`=="Other") %>% nrow()
 n_part
 n_part/n_study
@@ -627,14 +639,14 @@ Let's repeat all that, but for taxonomic focus:
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>%
   filter(`Sequencing Method`=="Sanger Sequencing") %>% nrow()
 n_part
 n_part/n_study
 ```
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>%
   filter(`Sequencing Method`=="Sanger Sequencing") %>% nrow()
 n_part
 n_part/n_study
@@ -644,7 +656,7 @@ Here is the same comparison for microsatellites:
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)")  %>%
   filter(`Sequencing Method`=="Microsatellites") %>% nrow()
 n_part
 n_part/n_study
@@ -652,7 +664,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>%
   filter(`Sequencing Method`=="Microsatellites") %>% nrow()
 n_part
 n_part/n_study
@@ -662,7 +674,7 @@ And for reduced representation approaches:
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)")  %>%
   filter(`Sequencing Method`=="Reduced Representation") %>% nrow()
 n_part
 n_part/n_study
@@ -670,7 +682,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)")  %>%
   filter(`Sequencing Method`=="Reduced Representation") %>% nrow()
 n_part
 n_part/n_study
@@ -680,7 +692,7 @@ For WGS:
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)")  %>%
   filter(`Sequencing Method`=="WGS") %>% nrow()
 n_part
 n_part/n_study
@@ -688,7 +700,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>%
   filter(`Sequencing Method`=="WGS") %>% nrow()
 n_part
 n_part/n_study
@@ -699,7 +711,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sampled Focal Taxa Range`=="Global South" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)")  %>%
   filter(`Sequencing Method`=="Other") %>% nrow()
 n_part
 n_part/n_study
@@ -707,17 +719,26 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both") %>%
+  filter(`Sampled Focal Taxa Range`=="Global North" | `Sampled Focal Taxa Range`=="Both (Migratory)" | `Sampled Focal Taxa Range`=="Both (Shared Resident)") %>%
   filter(`Sequencing Method`=="Other") %>% nrow()
 n_part
 n_part/n_study
 ```
 
-Let's summarize some other aspects of the review. Here are the proportion of scientists with a global north affiliation: 
+Let's summarize some other aspects of the review. Here are the proportion of studies with a global north affiliation in the first or last authorship slot: 
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North") %>% nrow()
+    filter((`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North")) %>% nrow()
+n_part
+n_part/n_study
+```
+
+...versus anywhere in the authorship list: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+    filter((`First Author Origin`=="Global North" | `Senior Author Origin`=="Global North" | `Global South Middle Author?`=="No")) %>% nrow()
 n_part
 n_part/n_study
 ```
@@ -731,11 +752,29 @@ n_part
 n_part/n_study
 ```
 
+Here are the number of studies with a Global South affiliation in the first or last authorship position: 
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+    filter((`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South")) %>% nrow()
+n_part
+n_part/n_study
+```
+
+...versus all authors:
+
+```{r, warning=FALSE, message=FALSE}
+n_part <- lit %>% 
+    filter(`First Author Origin`=="Global South" | `Senior Author Origin`=="Global South" | `Global South Middle Author?`=="Yes") %>% nrow()
+n_part
+n_part/n_study
+```
+
 Let's also summarize sequencing across regions by study goal:  
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both") %>% 
+  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both" | `Global South Middle Author?`=="Yes") %>% 
   filter(`Study Focus`=="Identification / Sexing / Taxonomy / Systematics") %>% nrow
 n_part
 n_part/n_study
@@ -743,7 +782,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both") %>% 
+  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both" | `Global South Middle Author?`=="Yes") %>%
   filter(`Study Focus`=="Population Structure / Gene Flow / Diversity / Demographic History" |
         `Study Focus`== "Population Structure / Gene Flow / Diversity / Demographic History / Hybridix" ) %>% nrow
 n_part
@@ -752,7 +791,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both") %>% 
+    filter(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both" | `Global South Middle Author?`=="Yes") %>% 
   filter(`Study Focus`== "Selection / GWAS / Runs of Homozygosity / Adaptive Potential / Gene Expression") %>% nrow
 n_part
 n_part/n_study
@@ -762,7 +801,7 @@ Now for Global North authors:
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global North" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global North" | `Senior Author Origin`=="Both") %>% 
+  filter((`First Author Origin`=="Global North" & `Senior Author Origin`=="Global North") & (`Global South Middle Author?`=="No" | `Global South Middle Author?`=="N/A")) %>% 
   filter(`Study Focus`=="Identification / Sexing / Taxonomy / Systematics") %>% nrow
 n_part
 n_part/n_study
@@ -770,8 +809,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global North" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global North" | `Senior Author Origin`=="Both") %>% 
-  filter(`Study Focus`=="Population Structure / Gene Flow / Diversity / Demographic History" |
+  filter((`First Author Origin`=="Global North" & `Senior Author Origin`=="Global North") & (`Global South Middle Author?`=="No" | `Global South Middle Author?`=="N/A")) %>%   filter(`Study Focus`=="Population Structure / Gene Flow / Diversity / Demographic History" |
         `Study Focus`== "Population Structure / Gene Flow / Diversity / Demographic History / Hybridix" ) %>% nrow
 n_part
 n_part/n_study
@@ -779,8 +817,7 @@ n_part/n_study
 
 ```{r, warning=FALSE, message=FALSE}
 n_part <- lit %>% 
-  filter(`First Author Origin`=="Global North" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global North" | `Senior Author Origin`=="Both") %>% 
-  filter(`Study Focus`== "Selection / GWAS / Runs of Homozygosity / Adaptive Potential / Gene Expression") %>% nrow
+  filter((`First Author Origin`=="Global North" & `Senior Author Origin`=="Global North") & (`Global South Middle Author?`=="No" | `Global South Middle Author?`=="N/A")) %>%   filter(`Study Focus`== "Selection / GWAS / Runs of Homozygosity / Adaptive Potential / Gene Expression") %>% nrow
 n_part
 n_part/n_study
 ```
@@ -836,3 +873,26 @@ n_part <- lit %>%
 n_part
 n_part/n_study
 ```
+
+Finally, let's run logistic regression to determine whether participation by Global South authors has increased over the last five years:
+
+```{r, warning=FALSE, message=FALSE}
+lit_data <- lit
+lit_data$year <- lit_data$`Publication Year`
+lit_data <- lit_data %>% mutate(global_south_participation = if_else(`First Author Origin`=="Global South" | `First Author Origin`=="Both" | `Senior Author Origin`=="Global South" | `Senior Author Origin`=="Both" | `Global South Middle Author?`=="Yes", 1, 0))
+global_south_model <- glm(global_south_participation ~ year, data=lit_data, family = "binomial")
+summary(global_south_model) # model summary
+exp(coefficients(global_south_model)[2]) # log-odds
+confint.default(global_south_model)[2, ] # confidence interval
+```
+
+No effect, which we can see in a visualization (points jittered to give a sense of sample size):
+
+```{r, warning=FALSE, message=FALSE}
+lit_data %>% ggplot(aes(year, global_south_participation)) +
+  theme_classic() +
+  geom_jitter(pch=21, position = position_jitter(width = .1, height = .1))
+```
+
+
+
