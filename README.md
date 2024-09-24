@@ -5,7 +5,7 @@ This archive includes data and code from Linck & Cadena In press, *Molecular Eco
 
 `*.tsv`: Metadata for available reference genomes from NCBI's Genome Browser.
 
-`*.zip`: Zipped GBIF occurence datasets (DOIs for each are referenced in the manuscript) for different taxonomic groups and species lists. 
+`*.zip`: Zipped GBIF occurence datasets (DOIs for each are referenced in the manuscript) for different taxonomic groups and species lists. (Only available via Dryad.)
 
 `congen_lit_review.csv`: A comma-delimited table of summarizing the study's literature review. 
 
